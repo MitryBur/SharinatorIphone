@@ -1,5 +1,5 @@
 //
-//  DBViewController.h
+//  DBvkLoginVC.h
 //  Sharinator-iPhone
 //
 //  Created by Dmitry Burmistrov on 7/30/13.
@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface DBViewController : UIViewController
-
+@interface DBvkLoginVC : UIViewController <UIWebViewDelegate, NSURLConnectionDataDelegate>
+@property (nonatomic, weak) IBOutlet UIWebView *webView;
 @end
