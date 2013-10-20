@@ -7,9 +7,11 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "ShariSocial.h"
+#import "ShariObject.h"
 
-@interface ShariUser : NSObject
+@class ShariSocial;
+
+@interface ShariUser : ShariObject
 @property (nonatomic, assign) NSInteger id;
-//@property (nonatomic, strong) ShariSocial *social;
+@property (nonatomic, strong) ShariSocial *social;
 @end

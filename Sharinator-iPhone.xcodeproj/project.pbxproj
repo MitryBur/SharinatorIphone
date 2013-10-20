@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4833165617B040E000F43569 /* DBEventsVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 4833165517B040E000F43569 /* DBEventsVC.m */; };
+		4842630017B2ED4F00CFDA0F /* DBAddEventVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 484262FF17B2ED4F00CFDA0F /* DBAddEventVC.m */; };
+		4842630417B432C800CFDA0F /* DBAddMembersToEventVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 4842630317B432C800CFDA0F /* DBAddMembersToEventVC.m */; };
 		48A0CF9217A83C1900B819E5 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 48A0CF9117A83C1900B819E5 /* UIKit.framework */; };
 		48A0CF9417A83C1900B819E5 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 48A0CF9317A83C1900B819E5 /* Foundation.framework */; };
 		48A0CF9617A83C1900B819E5 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 48A0CF9517A83C1900B819E5 /* CoreGraphics.framework */; };
@@ -42,16 +45,16 @@
 		48A0D05417A99F4A00B819E5 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 48A0D01617A99F4A00B819E5 /* README.md */; };
 		48A0D07817A9A08E00B819E5 /* ShariUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 48A0D07717A9A08E00B819E5 /* ShariUser.m */; };
 		48A0D07B17A9A94800B819E5 /* ShariSocial.m in Sources */ = {isa = PBXBuildFile; fileRef = 48A0D07A17A9A94700B819E5 /* ShariSocial.m */; };
-		48A0D07F17A9AA6400B819E5 /* ShariConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = 48A0D07E17A9AA6400B819E5 /* ShariConnection.m */; };
-		48A0D08217A9AA7C00B819E5 /* ShariRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 48A0D08117A9AA7C00B819E5 /* ShariRequest.m */; };
-		48A0D08517A9AA8F00B819E5 /* ShariResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 48A0D08417A9AA8F00B819E5 /* ShariResponse.m */; };
 		48A0D08817A9AAE200B819E5 /* ShariClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 48A0D08717A9AAE100B819E5 /* ShariClient.m */; };
 		48A0D08C17AA482000B819E5 /* VKAccessManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 48A0D08B17AA481F00B819E5 /* VKAccessManager.m */; };
 		48A0D08F17AA517700B819E5 /* VKAccessToken.m in Sources */ = {isa = PBXBuildFile; fileRef = 48A0D08E17AA517700B819E5 /* VKAccessToken.m */; };
+		48A7E2E617BBBD9E008EEF8F /* DBEventDetailsVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 48A7E2E517BBBD9E008EEF8F /* DBEventDetailsVC.m */; };
 		48BE753517AAEDFB00CD277F /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 48BE753417AAEDFB00CD277F /* CFNetwork.framework */; };
 		48BE753717AAEE0A00CD277F /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 48BE753617AAEE0A00CD277F /* Security.framework */; };
 		48BE753917AAEF2000CD277F /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 48BE753817AAEF2000CD277F /* MobileCoreServices.framework */; };
 		48BE753B17AAEF2700CD277F /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 48BE753A17AAEF2600CD277F /* SystemConfiguration.framework */; };
+		48C5E24217B7A98800B088A1 /* ShariObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 48C5E24117B7A98800B088A1 /* ShariObject.m */; };
+		48DF5BE317B1A36200D11E0C /* ShariEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = 48DF5BE217B1A36200D11E0C /* ShariEvent.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,6 +68,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4833165417B040E000F43569 /* DBEventsVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DBEventsVC.h; sourceTree = "<group>"; };
+		4833165517B040E000F43569 /* DBEventsVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DBEventsVC.m; sourceTree = "<group>"; };
+		484262FE17B2ED4F00CFDA0F /* DBAddEventVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DBAddEventVC.h; sourceTree = "<group>"; };
+		484262FF17B2ED4F00CFDA0F /* DBAddEventVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DBAddEventVC.m; sourceTree = "<group>"; };
+		4842630217B432C800CFDA0F /* DBAddMembersToEventVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DBAddMembersToEventVC.h; sourceTree = "<group>"; };
+		4842630317B432C800CFDA0F /* DBAddMembersToEventVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DBAddMembersToEventVC.m; sourceTree = "<group>"; };
 		48A0CF8E17A83C1900B819E5 /* Sharinator-iPhone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Sharinator-iPhone.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		48A0CF9117A83C1900B819E5 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		48A0CF9317A83C1900B819E5 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -78,7 +87,6 @@
 		48A0CFA317A83C1A00B819E5 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		48A0CFA517A83C1A00B819E5 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		48A0CFA717A83C1A00B819E5 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
-		48A0CFAA17A83C1A00B819E5 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPhone.storyboard; sourceTree = "<group>"; };
 		48A0CFB717A83C1A00B819E5 /* Sharinator-iPhoneTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Sharinator-iPhoneTests.octest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		48A0CFB817A83C1A00B819E5 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
 		48A0CFC017A83C1A00B819E5 /* Sharinator-iPhoneTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Sharinator-iPhoneTests-Info.plist"; sourceTree = "<group>"; };
@@ -118,22 +126,23 @@
 		48A0D07717A9A08E00B819E5 /* ShariUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShariUser.m; sourceTree = "<group>"; };
 		48A0D07917A9A94700B819E5 /* ShariSocial.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShariSocial.h; sourceTree = "<group>"; };
 		48A0D07A17A9A94700B819E5 /* ShariSocial.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShariSocial.m; sourceTree = "<group>"; };
-		48A0D07D17A9AA6400B819E5 /* ShariConnection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShariConnection.h; sourceTree = "<group>"; };
-		48A0D07E17A9AA6400B819E5 /* ShariConnection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShariConnection.m; sourceTree = "<group>"; };
-		48A0D08017A9AA7C00B819E5 /* ShariRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShariRequest.h; sourceTree = "<group>"; };
-		48A0D08117A9AA7C00B819E5 /* ShariRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShariRequest.m; sourceTree = "<group>"; };
-		48A0D08317A9AA8E00B819E5 /* ShariResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShariResponse.h; sourceTree = "<group>"; };
-		48A0D08417A9AA8F00B819E5 /* ShariResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShariResponse.m; sourceTree = "<group>"; };
 		48A0D08617A9AAE100B819E5 /* ShariClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShariClient.h; sourceTree = "<group>"; };
 		48A0D08717A9AAE100B819E5 /* ShariClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShariClient.m; sourceTree = "<group>"; };
 		48A0D08A17AA481F00B819E5 /* VKAccessManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VKAccessManager.h; sourceTree = "<group>"; };
 		48A0D08B17AA481F00B819E5 /* VKAccessManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VKAccessManager.m; sourceTree = "<group>"; };
 		48A0D08D17AA517700B819E5 /* VKAccessToken.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VKAccessToken.h; sourceTree = "<group>"; };
 		48A0D08E17AA517700B819E5 /* VKAccessToken.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VKAccessToken.m; sourceTree = "<group>"; };
+		48A7E2E417BBBD9E008EEF8F /* DBEventDetailsVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DBEventDetailsVC.h; sourceTree = "<group>"; };
+		48A7E2E517BBBD9E008EEF8F /* DBEventDetailsVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DBEventDetailsVC.m; sourceTree = "<group>"; };
+		48A7E2E717BBCCFA008EEF8F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainStoryboard_iPhone.storyboard; sourceTree = "<group>"; };
 		48BE753417AAEDFB00CD277F /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		48BE753617AAEE0A00CD277F /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		48BE753817AAEF2000CD277F /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		48BE753A17AAEF2600CD277F /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		48C5E24017B7A98700B088A1 /* ShariObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShariObject.h; sourceTree = "<group>"; };
+		48C5E24117B7A98800B088A1 /* ShariObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShariObject.m; sourceTree = "<group>"; };
+		48DF5BE117B1A36200D11E0C /* ShariEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShariEvent.h; sourceTree = "<group>"; };
+		48DF5BE217B1A36200D11E0C /* ShariEvent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShariEvent.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -210,6 +219,14 @@
 				48A0CF9817A83C1A00B819E5 /* Supporting Files */,
 				48A0CFCF17A846B800B819E5 /* DBvkLoginVC.h */,
 				48A0CFD017A846B900B819E5 /* DBvkLoginVC.m */,
+				4833165417B040E000F43569 /* DBEventsVC.h */,
+				4833165517B040E000F43569 /* DBEventsVC.m */,
+				48A7E2E417BBBD9E008EEF8F /* DBEventDetailsVC.h */,
+				48A7E2E517BBBD9E008EEF8F /* DBEventDetailsVC.m */,
+				484262FE17B2ED4F00CFDA0F /* DBAddEventVC.h */,
+				484262FF17B2ED4F00CFDA0F /* DBAddEventVC.m */,
+				4842630217B432C800CFDA0F /* DBAddMembersToEventVC.h */,
+				4842630317B432C800CFDA0F /* DBAddMembersToEventVC.m */,
 			);
 			path = "Sharinator-iPhone";
 			sourceTree = "<group>";
@@ -304,6 +321,10 @@
 				48A0D07717A9A08E00B819E5 /* ShariUser.m */,
 				48A0D07917A9A94700B819E5 /* ShariSocial.h */,
 				48A0D07A17A9A94700B819E5 /* ShariSocial.m */,
+				48DF5BE117B1A36200D11E0C /* ShariEvent.h */,
+				48DF5BE217B1A36200D11E0C /* ShariEvent.m */,
+				48C5E24017B7A98700B088A1 /* ShariObject.h */,
+				48C5E24117B7A98800B088A1 /* ShariObject.m */,
 			);
 			name = "Value Objects";
 			sourceTree = "<group>";
@@ -312,12 +333,6 @@
 			isa = PBXGroup;
 			children = (
 				48A0D07217A99FFF00B819E5 /* Value Objects */,
-				48A0D07D17A9AA6400B819E5 /* ShariConnection.h */,
-				48A0D07E17A9AA6400B819E5 /* ShariConnection.m */,
-				48A0D08017A9AA7C00B819E5 /* ShariRequest.h */,
-				48A0D08117A9AA7C00B819E5 /* ShariRequest.m */,
-				48A0D08317A9AA8E00B819E5 /* ShariResponse.h */,
-				48A0D08417A9AA8F00B819E5 /* ShariResponse.m */,
 				48A0D08617A9AAE100B819E5 /* ShariClient.h */,
 				48A0D08717A9AAE100B819E5 /* ShariClient.m */,
 			);
@@ -390,6 +405,7 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				Base,
 			);
 			mainGroup = 48A0CF8517A83C1900B819E5;
 			productRefGroup = 48A0CF8F17A83C1900B819E5 /* Products */;
@@ -468,12 +484,15 @@
 				48A0D03A17A99F4A00B819E5 /* UIImageView+AFNetworking.m in Sources */,
 				48A0D07817A9A08E00B819E5 /* ShariUser.m in Sources */,
 				48A0D07B17A9A94800B819E5 /* ShariSocial.m in Sources */,
-				48A0D07F17A9AA6400B819E5 /* ShariConnection.m in Sources */,
-				48A0D08217A9AA7C00B819E5 /* ShariRequest.m in Sources */,
-				48A0D08517A9AA8F00B819E5 /* ShariResponse.m in Sources */,
 				48A0D08817A9AAE200B819E5 /* ShariClient.m in Sources */,
 				48A0D08C17AA482000B819E5 /* VKAccessManager.m in Sources */,
 				48A0D08F17AA517700B819E5 /* VKAccessToken.m in Sources */,
+				4833165617B040E000F43569 /* DBEventsVC.m in Sources */,
+				48DF5BE317B1A36200D11E0C /* ShariEvent.m in Sources */,
+				4842630017B2ED4F00CFDA0F /* DBAddEventVC.m in Sources */,
+				4842630417B432C800CFDA0F /* DBAddMembersToEventVC.m in Sources */,
+				48C5E24217B7A98800B088A1 /* ShariObject.m in Sources */,
+				48A7E2E617BBBD9E008EEF8F /* DBEventDetailsVC.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -507,7 +526,7 @@
 		48A0CFA917A83C1A00B819E5 /* MainStoryboard_iPhone.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				48A0CFAA17A83C1A00B819E5 /* en */,
+				48A7E2E717BBCCFA008EEF8F /* Base */,
 			);
 			name = MainStoryboard_iPhone.storyboard;
 			sourceTree = "<group>";
@@ -535,7 +554,7 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				COPY_PHASE_STRIP = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -567,7 +586,7 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				COPY_PHASE_STRIP = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;

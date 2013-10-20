@@ -13,9 +13,11 @@
 @property (nonatomic) VKAccessToken *vkToken;
 - (VKAccessToken *) retrieveTokenSilently;
 - (VKAccessToken *) retrieveTokenUsingWebView:(UIViewController *)parentVC;
-- (BOOL) isVKTokenActual;
+//- (BOOL) isVKTokenActual;
 @end
-@implementation VKAccessManager
+@implementation VKAccessManager{
+    UIViewController *_parentVC;
+}
 
 + (VKAccessManager *) sharedInstance
 {
@@ -27,7 +29,7 @@
     return sharedInstance;
 }
 
-- (BOOL)extractToken:(NSString *)urlString
+- (BOOL)parseTokenURL:(NSString *)urlString
 {
     if ([urlString hasPrefix:@"http://api.vkontakte.ru"]) {
         NSString *queryString = [urlString componentsSeparatedByString:@"#"][1];
@@ -51,7 +53,7 @@
 - (VKAccessToken *) retrieveTokenSilently{
     NSURL *vkAuthUrl = [NSURL URLWithString:@"http://oauth.vk.com/authorize?"
                         "client_id=3759886&"
-                        "scope=friends,events&"
+                        "scope=friends,events,offline&"
                         "redirect_uri=http://api.vkontakte.ru/blank.html&"
                         "response_type=token"];
     
@@ -65,10 +67,14 @@
         // Print the response body in text
         NSString *urlString = [[[operation response] URL] absoluteString];
         NSLog(@"URL %@",urlString);
-        [self extractToken:urlString];
-        //NSLog(@"Response: %@", [[NSString alloc] initWithData:responseObject encoding:NSUTF8StringEncoding]);
+        if ([self parseTokenURL:urlString]){
+            [self.delegate vkAccessManager:self tokenRefreshed:[VKAccessToken loadToken]];
+        }
+        else
+            [self retrieveTokenUsingWebView:_parentVC];
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         NSLog(@"Error: %@", error);
+        [self retrieveTokenUsingWebView:_parentVC];
     }];
     [operation start];
     
@@ -77,11 +83,14 @@
 }
 - (VKAccessToken *) retrieveTokenUsingWebView: (UIViewController *)parentVC{
     if (!self.webView) {
-        self.webView = [[UIWebView alloc] initWithFrame: parentVC.view.frame];
+        NSLog(@"%s", __FUNCTION__);
+        CGRect screenBounds = [[UIScreen mainScreen] bounds];
+        NSLog(@"Width: %f Height:%f",screenBounds.size.width, screenBounds.size.height);
+        self.webView = [[UIWebView alloc] initWithFrame: screenBounds];
     }
      NSURL *vkAuthUrl = [NSURL URLWithString:@"http://oauth.vk.com/authorize?"
      "client_id=3759886&"
-     "scope=friends,events&"
+     "scope=friends,events,offline&"
      "redirect_uri=http://api.vkontakte.ru/blank.html&"
      "response_type=token"];
      NSURLRequest *request = [NSURLRequest requestWithURL:vkAuthUrl];
@@ -96,25 +105,26 @@
 }
 - (VKAccessToken *) vkToken{
     _vkToken = [VKAccessToken loadToken];
-    if (!_vkToken) return nil;
-
-    if (_vkToken.isValid){
+    if (_vkToken){ //&& _vkToken.isValid){
         return _vkToken;
     }
-    else
+    /*else
         if (_vkToken.isExpired) {
-            
+            [self retrieveTokenSilently];
         }
+     */
+    //Otherwise
     return nil;
 }
 - (void) refreshToken:(UIViewController *)parentVC{
-    [self retrieveTokenUsingWebView:parentVC];
+    _parentVC = parentVC;
+    [self retrieveTokenSilently];
 }
-
+/*
 - (BOOL) isVKTokenActual{
     return NO;
 }
-
+*/
 
 - (void)webViewDidFinishLoad:(UIWebView *)webView{
 	NSLog(@"RequestLoadFinished");
@@ -124,6 +134,7 @@
     //102 = Frame load interrupted
     if (error.code != 102) {
         NSLog(@"Error: %@", error);
+        [self.delegate vkAccessManager:self didFailWithError:error];
     }
 }
 
@@ -136,12 +147,21 @@
  navigationType:(UIWebViewNavigationType)navigationType{
 	NSString *urlString = [[request URL] absoluteString];
 	NSLog(@"%s", __FUNCTION__);
-	if ([self extractToken:urlString])
+	if ([self parseTokenURL:urlString])
     {
-        if ([self isBeingPresented])
+        NSLog(@"URL str: %@", [[request URL] absoluteString]);
+        //[webView stopLoading];
+        [self hideWebView];
+
+        /*if ([self isBeingPresented])
         {
-            [self performSelector:@selector(hideWebView) withObject:nil afterDelay:1];
-        }
+            [self hideWebView];
+            //[self performSelector:@selector(hideWebView) withObject:nil afterDelay:1];
+        }*/
+        NSArray *args = [NSArray arrayWithObjects: self, [VKAccessToken loadToken], nil];
+
+        [self.delegate performSelector:@selector(vkAccessManager:tokenRefreshed:) withObject:args afterDelay:0.0];
+
         return NO;
     }
     else

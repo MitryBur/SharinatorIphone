@@ -7,6 +7,7 @@
 //
 
 #import "ShariUser.h"
+#import "ShariSocial.h"
 
 @implementation ShariUser
 

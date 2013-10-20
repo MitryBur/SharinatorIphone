@@ -7,13 +7,15 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "ShariUser.h"
+#import "ShariObject.h"
 
-@interface ShariSocial : NSObject
-//@property (nonatomic, strong) ShariUser *user;
-@property (nonatomic, assign) NSInteger *id;
+@class ShariUser;
+
+@interface ShariSocial : ShariObject
+@property (nonatomic, strong) ShariUser *user;
+@property (nonatomic, assign) NSUInteger id;
 @property (nonatomic, strong) NSString *name;
-@property (nonatomic, strong) NSString *suname;
-@property (nonatomic, assign) NSInteger *vkID;
+@property (nonatomic, strong) NSString *surname;
+@property (nonatomic, assign) NSInteger vkID;
 
 @end

@@ -9,17 +9,23 @@
 #import <Foundation/Foundation.h>
 #import "VKAccessToken.h"
 
-@protocol VKAccessManagerDelegate <NSObject>
-@optional
-- (void) tokenRefreshed;
-@end
+@protocol VKAccessManagerDelegate;
 
 @interface VKAccessManager : UIViewController <UIWebViewDelegate>
 
 @property (nonatomic, readonly) VKAccessToken *vkToken;
 @property (nonatomic) UIWebView *webView;
+@property(nonatomic, assign) NSObject <VKAccessManagerDelegate> *delegate;
+//@property (nonatomic, weak) id<VKAccessManagerDelegate> delegate;
+@property (nonatomic, strong) UIViewController *viewController;
 
 + (VKAccessManager *) sharedInstance;
 - (void) refreshToken:(UIViewController *)parentVC;
 
+@end
+
+@protocol VKAccessManagerDelegate <NSObject>
+@optional
+- (void)vkAccessManager:(VKAccessManager *)manager tokenRefreshed:(VKAccessToken *)token;
+- (void)vkAccessManager:(VKAccessManager *)manager didFailWithError:(NSError *)error;
 @end
