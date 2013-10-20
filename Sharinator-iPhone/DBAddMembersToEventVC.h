@@ -9,6 +9,12 @@
 #import <UIKit/UIKit.h>
 #import "ShariClient.h"
 
+@protocol DBAddMembersToEventVCDelegate;
+
 @interface DBAddMembersToEventVC : UITableViewController <ShariClientDelegate>
-@property (nonatomic, strong) NSMutableArray *vkFriends;
+@property (nonatomic, weak) id<DBAddMembersToEventVCDelegate> delegate;
+@end
+
+@protocol DBAddMembersToEventVCDelegate <NSObject>
+- (void)membersAdded:(NSArray *)members;
 @end

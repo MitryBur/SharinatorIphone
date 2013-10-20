@@ -6,12 +6,14 @@
 //  Copyright (c) 2013 Dmitry Burmistrov. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+@import UIKit;
 #import "ShariEvent.h"
+#import "DBAddMembersToEventVC.h"
+
 
 @protocol DBAddEventVCDelegate;
 
-@interface DBAddEventVC : UITableViewController
+@interface DBAddEventVC : UITableViewController <DBAddMembersToEventVCDelegate>
 @property (nonatomic, weak) id<DBAddEventVCDelegate> delegate;
 @property (weak, nonatomic) IBOutlet UITextField *titleTextField;
 @property (weak, nonatomic) IBOutlet UITextView *descriptionTextView;

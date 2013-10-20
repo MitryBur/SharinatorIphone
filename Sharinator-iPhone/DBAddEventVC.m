@@ -43,6 +43,15 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    NSLog(@"%@", segue.identifier);
+    //if ([segue.identifier isEqual: @"AddMembersToEvent"]) {
+    DBAddMembersToEventVC *addMembersVC = segue.destinationViewController;
+    addMembersVC.delegate = self;
+    //}
+}
+
 - (IBAction)done:(id)sender{
     ShariEvent *event = [[ShariEvent alloc] init];
     event.title = self.titleTextField.text;
@@ -146,6 +155,13 @@
      */
     if (indexPath.section == 0) {
         [self.titleTextField becomeFirstResponder];
+    }
+}
+#pragma mark - DBAddMembersToEventVCDelegate
+- (void)membersAdded:(NSArray *)members{
+    NSLog(@"Member IDs");
+    for (NSNumber *member in members){
+        NSLog(@"%d", [member integerValue]);
     }
 }
 

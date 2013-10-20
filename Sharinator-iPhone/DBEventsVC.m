@@ -102,6 +102,8 @@
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
+    NSLog(@"%@", segue.identifier);
+
     if ([segue.identifier isEqual: @"AddEvent"]) {
         UINavigationController *naviController = segue.destinationViewController;
         DBAddEventVC *addEventVB = [[naviController viewControllers] objectAtIndex:0];

@@ -48,12 +48,14 @@
 		48A0D08817A9AAE200B819E5 /* ShariClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 48A0D08717A9AAE100B819E5 /* ShariClient.m */; };
 		48A0D08C17AA482000B819E5 /* VKAccessManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 48A0D08B17AA481F00B819E5 /* VKAccessManager.m */; };
 		48A0D08F17AA517700B819E5 /* VKAccessToken.m in Sources */ = {isa = PBXBuildFile; fileRef = 48A0D08E17AA517700B819E5 /* VKAccessToken.m */; };
-		48A7E2E617BBBD9E008EEF8F /* DBEventDetailsVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 48A7E2E517BBBD9E008EEF8F /* DBEventDetailsVC.m */; };
 		48BE753517AAEDFB00CD277F /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 48BE753417AAEDFB00CD277F /* CFNetwork.framework */; };
 		48BE753717AAEE0A00CD277F /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 48BE753617AAEE0A00CD277F /* Security.framework */; };
 		48BE753917AAEF2000CD277F /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 48BE753817AAEF2000CD277F /* MobileCoreServices.framework */; };
 		48BE753B17AAEF2700CD277F /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 48BE753A17AAEF2600CD277F /* SystemConfiguration.framework */; };
 		48C5E24217B7A98800B088A1 /* ShariObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 48C5E24117B7A98800B088A1 /* ShariObject.m */; };
+		48CBDC0B1814041300241BF8 /* ShariMember.m in Sources */ = {isa = PBXBuildFile; fileRef = 48CBDC0A1814041300241BF8 /* ShariMember.m */; };
+		48CBDC1118146EAD00241BF8 /* DBEventDetailsVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 48CBDC1018146EAD00241BF8 /* DBEventDetailsVC.m */; };
+		48CBDC141814713500241BF8 /* DBEventInformationVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 48CBDC131814713500241BF8 /* DBEventInformationVC.m */; };
 		48DF5BE317B1A36200D11E0C /* ShariEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = 48DF5BE217B1A36200D11E0C /* ShariEvent.m */; };
 /* End PBXBuildFile section */
 
@@ -132,8 +134,6 @@
 		48A0D08B17AA481F00B819E5 /* VKAccessManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VKAccessManager.m; sourceTree = "<group>"; };
 		48A0D08D17AA517700B819E5 /* VKAccessToken.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VKAccessToken.h; sourceTree = "<group>"; };
 		48A0D08E17AA517700B819E5 /* VKAccessToken.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VKAccessToken.m; sourceTree = "<group>"; };
-		48A7E2E417BBBD9E008EEF8F /* DBEventDetailsVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DBEventDetailsVC.h; sourceTree = "<group>"; };
-		48A7E2E517BBBD9E008EEF8F /* DBEventDetailsVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DBEventDetailsVC.m; sourceTree = "<group>"; };
 		48A7E2E717BBCCFA008EEF8F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainStoryboard_iPhone.storyboard; sourceTree = "<group>"; };
 		48BE753417AAEDFB00CD277F /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		48BE753617AAEE0A00CD277F /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
@@ -141,6 +141,12 @@
 		48BE753A17AAEF2600CD277F /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		48C5E24017B7A98700B088A1 /* ShariObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShariObject.h; sourceTree = "<group>"; };
 		48C5E24117B7A98800B088A1 /* ShariObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShariObject.m; sourceTree = "<group>"; };
+		48CBDC091814041300241BF8 /* ShariMember.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShariMember.h; sourceTree = "<group>"; };
+		48CBDC0A1814041300241BF8 /* ShariMember.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShariMember.m; sourceTree = "<group>"; };
+		48CBDC0F18146EAD00241BF8 /* DBEventDetailsVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DBEventDetailsVC.h; sourceTree = "<group>"; };
+		48CBDC1018146EAD00241BF8 /* DBEventDetailsVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DBEventDetailsVC.m; sourceTree = "<group>"; };
+		48CBDC121814713500241BF8 /* DBEventInformationVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DBEventInformationVC.h; sourceTree = "<group>"; };
+		48CBDC131814713500241BF8 /* DBEventInformationVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DBEventInformationVC.m; sourceTree = "<group>"; };
 		48DF5BE117B1A36200D11E0C /* ShariEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShariEvent.h; sourceTree = "<group>"; };
 		48DF5BE217B1A36200D11E0C /* ShariEvent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShariEvent.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -221,12 +227,14 @@
 				48A0CFD017A846B900B819E5 /* DBvkLoginVC.m */,
 				4833165417B040E000F43569 /* DBEventsVC.h */,
 				4833165517B040E000F43569 /* DBEventsVC.m */,
-				48A7E2E417BBBD9E008EEF8F /* DBEventDetailsVC.h */,
-				48A7E2E517BBBD9E008EEF8F /* DBEventDetailsVC.m */,
 				484262FE17B2ED4F00CFDA0F /* DBAddEventVC.h */,
 				484262FF17B2ED4F00CFDA0F /* DBAddEventVC.m */,
 				4842630217B432C800CFDA0F /* DBAddMembersToEventVC.h */,
 				4842630317B432C800CFDA0F /* DBAddMembersToEventVC.m */,
+				48CBDC0F18146EAD00241BF8 /* DBEventDetailsVC.h */,
+				48CBDC1018146EAD00241BF8 /* DBEventDetailsVC.m */,
+				48CBDC121814713500241BF8 /* DBEventInformationVC.h */,
+				48CBDC131814713500241BF8 /* DBEventInformationVC.m */,
 			);
 			path = "Sharinator-iPhone";
 			sourceTree = "<group>";
@@ -325,6 +333,8 @@
 				48DF5BE217B1A36200D11E0C /* ShariEvent.m */,
 				48C5E24017B7A98700B088A1 /* ShariObject.h */,
 				48C5E24117B7A98800B088A1 /* ShariObject.m */,
+				48CBDC091814041300241BF8 /* ShariMember.h */,
+				48CBDC0A1814041300241BF8 /* ShariMember.m */,
 			);
 			name = "Value Objects";
 			sourceTree = "<group>";
@@ -490,9 +500,11 @@
 				4833165617B040E000F43569 /* DBEventsVC.m in Sources */,
 				48DF5BE317B1A36200D11E0C /* ShariEvent.m in Sources */,
 				4842630017B2ED4F00CFDA0F /* DBAddEventVC.m in Sources */,
+				48CBDC1118146EAD00241BF8 /* DBEventDetailsVC.m in Sources */,
+				48CBDC141814713500241BF8 /* DBEventInformationVC.m in Sources */,
 				4842630417B432C800CFDA0F /* DBAddMembersToEventVC.m in Sources */,
 				48C5E24217B7A98800B088A1 /* ShariObject.m in Sources */,
-				48A7E2E617BBBD9E008EEF8F /* DBEventDetailsVC.m in Sources */,
+				48CBDC0B1814041300241BF8 /* ShariMember.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -548,6 +560,7 @@
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -580,6 +593,7 @@
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_EMPTY_BODY = YES;

@@ -10,7 +10,10 @@
 #import "ShariSocial.h"
 
 
-@implementation DBAddMembersToEventVC
+@implementation DBAddMembersToEventVC{
+    NSMutableArray *members;
+    NSArray *vkFriends;
+}
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -40,7 +43,17 @@
     ShariClient *client = [ShariClient sharedInstance];
     client.delegate = self;
     
+    members = [[NSMutableArray alloc] init];
+    
     [self reloadDataFromWeb];
+}
+- (void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+}
+
+- (void)viewWillDisappear:(BOOL)animated{
+    [super viewWillDisappear:animated];
+    [self.delegate membersAdded:[members copy]];
 }
 
 -(void)reloadDataFromWeb{
@@ -64,16 +77,22 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     // Return the number of rows in the section.
-    return [self.vkFriends count];
+    return [vkFriends count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *CellIdentifier = @"Cell";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
-    NSLog(@""); 
-	ShariSocial *friend = [self.vkFriends objectAtIndex:indexPath.row];
+	ShariSocial *friend = [vkFriends objectAtIndex:indexPath.row];
     cell.textLabel.text = friend.name;
+    
+    for (NSNumber *vkID in members) {
+        if ([vkID integerValue] == friend.vkID) {
+            cell.accessoryType = UITableViewCellAccessoryCheckmark;
+            break;
+        }
+    }
     
     return cell;
 }
@@ -131,11 +150,19 @@
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
     cell.accessoryType = cell.accessoryType == UITableViewCellAccessoryCheckmark ? UITableViewCellAccessoryNone : UITableViewCellAccessoryCheckmark;
+    
+    ShariSocial *friend = [vkFriends objectAtIndex:indexPath.row];
+    if (cell.accessoryType == UITableViewCellAccessoryCheckmark) {
+        [members addObject:[NSNumber numberWithInteger:friend.vkID]];
+    }
+    else{
+        [members removeObjectIdenticalTo:[NSNumber numberWithInteger:friend.vkID]];
+    }
 }
 
 #pragma mark - ShariClient delegate
 - (void)shariClient:(ShariClient *)client didGetWithResponse:(id)response{
-        self.vkFriends = response;
+        vkFriends = response;
         [self.tableView reloadData];
         [self.refreshControl endRefreshing];
 }
