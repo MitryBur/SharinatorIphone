@@ -40,6 +40,12 @@
     [refreshControl addTarget:self action:@selector(reloadDataFromWeb) forControlEvents:UIControlEventValueChanged];
     self.refreshControl = refreshControl;
     
+    
+    //Temp
+    UISwipeGestureRecognizer *recognizer = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(swiped:)];
+    recognizer.direction = UISwipeGestureRecognizerDirectionLeft;
+    [self.tableView addGestureRecognizer:recognizer];
+    
     ShariClient *client = [ShariClient sharedInstance];
     client.delegate = self;
     
@@ -49,6 +55,14 @@
 }
 - (void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
+}
+
+-(void)swiped:(UIGestureRecognizer *)recognizer{
+    CGPoint point = [recognizer locationInView:self.tableView];
+    NSIndexPath *index = [self.tableView indexPathForRowAtPoint:point];
+    UITableViewCell *cell = [self.tableView cellForRowAtIndexPath:index];
+    cell.textLabel.text = @"Perfect";
+    NSLog(@"Swiped");
 }
 
 - (void)viewWillDisappear:(BOOL)animated{

@@ -87,7 +87,7 @@
         CGRect screenBounds = [[UIScreen mainScreen] bounds];
         //Status bar height = 20
         screenBounds.origin.y += 20;
-        screenBounds.size.height = -20;
+        screenBounds.size.height -= 20;
         NSLog(@"Width: %f Height:%f",screenBounds.size.width, screenBounds.size.height);
         self.webView = [[UIWebView alloc] initWithFrame: screenBounds];
     }

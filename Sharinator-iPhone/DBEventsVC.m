@@ -114,7 +114,7 @@
     if ([segue.identifier isEqual:@"EventDetails"]) {
         DBEventDetailsVC *eventDetailsVC = segue.destinationViewController;
         ShariEvent *event = [self.events objectAtIndex:[self.tableView indexPathForSelectedRow].row];
-        eventDetailsVC.title = event.title;
+        eventDetailsVC.event = event;
         return;
     }
 }

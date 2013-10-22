@@ -6,9 +6,12 @@
 //  Copyright (c) 2013 Dmitry Burmistrov. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+@import UIKit;
+
+#import "ShariEvent.h"
 
 @interface DBEventDetailsVC : UITableViewController
 @property (weak, nonatomic) IBOutlet UISegmentedControl *visibleDataSegmentedControl;
+@property (strong, nonatomic) ShariEvent *event;
 
 @end
