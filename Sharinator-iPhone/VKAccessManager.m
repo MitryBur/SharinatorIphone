@@ -161,7 +161,7 @@
             [self hideWebView];
             //[self performSelector:@selector(hideWebView) withObject:nil afterDelay:1];
         }*/
-        NSArray *args = [NSArray arrayWithObjects: self, [VKAccessToken loadToken], nil];
+        NSArray *args = @[self, [VKAccessToken loadToken]];
 
         [self.delegate performSelector:@selector(vkAccessManager:tokenRefreshed:) withObject:args afterDelay:0.0];
 

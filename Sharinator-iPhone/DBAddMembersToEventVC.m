@@ -98,7 +98,7 @@
 {
     static NSString *CellIdentifier = @"Cell";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
-	ShariSocial *friend = [vkFriends objectAtIndex:indexPath.row];
+	ShariSocial *friend = vkFriends[indexPath.row];
     cell.textLabel.text = friend.name;
     
     for (NSNumber *vkID in members) {
@@ -165,12 +165,12 @@
     UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
     cell.accessoryType = cell.accessoryType == UITableViewCellAccessoryCheckmark ? UITableViewCellAccessoryNone : UITableViewCellAccessoryCheckmark;
     
-    ShariSocial *friend = [vkFriends objectAtIndex:indexPath.row];
+    ShariSocial *friend = vkFriends[indexPath.row];
     if (cell.accessoryType == UITableViewCellAccessoryCheckmark) {
-        [members addObject:[NSNumber numberWithInteger:friend.vkID]];
+        [members addObject:@(friend.vkID)];
     }
     else{
-        [members removeObjectIdenticalTo:[NSNumber numberWithInteger:friend.vkID]];
+        [members removeObjectIdenticalTo:@(friend.vkID)];
     }
 }
 

@@ -13,14 +13,14 @@
 
 - (instancetype)initWithRawDictionary:(NSDictionary *)dictionary{
     if ((self = [self init])) {
-        self.title = [dictionary objectForKey:@"title"];
-        self.description = [dictionary objectForKey:@"description"];
+        self.title = dictionary[@"title"];
+        self.description = dictionary[@"description"];
     }
     return self;
 }
 
 - (NSDictionary *)dictionaryRepresentation{
-    return [[NSDictionary alloc] initWithObjectsAndKeys:self.title, @"title",self.description, @"description", nil];
+    return @{@"title": self.title,@"description": self.description};
 }
 
 + (NSString *)requestPath{

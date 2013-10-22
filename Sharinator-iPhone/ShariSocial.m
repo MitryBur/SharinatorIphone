@@ -12,17 +12,18 @@
 @implementation ShariSocial
 - (instancetype)initWithRawDictionary:(NSDictionary *)dictionary{
     if ((self = [self init])) {
-        self.id = [[dictionary objectForKey:@"user_id"] integerValue];
-        self.name = [dictionary objectForKey:@"first_name"];
-        self.surname = [dictionary objectForKey:@"last_name"];
-        self.vkID = [[dictionary objectForKey:@"uid"] integerValue];
+        self.id = [dictionary[@"user_id"] integerValue];
+        self.name = dictionary[@"first_name"];
+        self.surname = dictionary[@"last_name"];
+        self.vkID = [dictionary[@"uid"] integerValue];
     }
     return self;
 }
 
 - (NSDictionary *)dictionaryRepresentation{
-    NSArray *objects = [NSArray arrayWithObjects:[NSNumber numberWithInteger:self.id],self.name, self.surname, [NSNumber numberWithInteger:self.vkID], nil];
-    NSArray *keys = [NSArray arrayWithObjects:@"user_id", @"first_name", @"last_name", @"uid", nil];
+    NSArray *objects = @[@(self.id),
+                         self.name, self.surname, @(self.vkID)];
+    NSArray *keys = @[@"user_id", @"first_name", @"last_name", @"uid"];
     return [NSDictionary dictionaryWithObjects:objects forKeys:keys];
 }
 @end

@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		481CBE2E1816FD3700762821 /* test.json in Resources */ = {isa = PBXBuildFile; fileRef = 481CBE2D1816FD3700762821 /* test.json */; };
+		481CBE311817066500762821 /* DBDocumentsManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 481CBE301817066500762821 /* DBDocumentsManager.m */; };
 		4833165617B040E000F43569 /* DBEventsVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 4833165517B040E000F43569 /* DBEventsVC.m */; };
 		4842630017B2ED4F00CFDA0F /* DBAddEventVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 484262FF17B2ED4F00CFDA0F /* DBAddEventVC.m */; };
 		4842630417B432C800CFDA0F /* DBAddMembersToEventVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 4842630317B432C800CFDA0F /* DBAddMembersToEventVC.m */; };
@@ -70,6 +72,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		481CBE2D1816FD3700762821 /* test.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = test.json; sourceTree = "<group>"; };
+		481CBE2F1817066500762821 /* DBDocumentsManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DBDocumentsManager.h; sourceTree = "<group>"; };
+		481CBE301817066500762821 /* DBDocumentsManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DBDocumentsManager.m; sourceTree = "<group>"; };
 		4833165417B040E000F43569 /* DBEventsVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DBEventsVC.h; sourceTree = "<group>"; };
 		4833165517B040E000F43569 /* DBEventsVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DBEventsVC.m; sourceTree = "<group>"; };
 		484262FE17B2ED4F00CFDA0F /* DBAddEventVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DBAddEventVC.h; sourceTree = "<group>"; };
@@ -217,6 +222,8 @@
 		48A0CF9717A83C1A00B819E5 /* Sharinator-iPhone */ = {
 			isa = PBXGroup;
 			children = (
+				481CBE2F1817066500762821 /* DBDocumentsManager.h */,
+				481CBE301817066500762821 /* DBDocumentsManager.m */,
 				48A0D08917AA47BD00B819E5 /* VK */,
 				48A0D07C17A9AA3000B819E5 /* API */,
 				48A0CFA017A83C1A00B819E5 /* DBAppDelegate.h */,
@@ -249,6 +256,7 @@
 				48A0CFA317A83C1A00B819E5 /* Default.png */,
 				48A0CFA517A83C1A00B819E5 /* Default@2x.png */,
 				48A0CFA717A83C1A00B819E5 /* Default-568h@2x.png */,
+				481CBE2D1816FD3700762821 /* test.json */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -438,6 +446,7 @@
 				48A0CFA617A83C1A00B819E5 /* Default@2x.png in Resources */,
 				48A0CFA817A83C1A00B819E5 /* Default-568h@2x.png in Resources */,
 				48A0CFAB17A83C1A00B819E5 /* MainStoryboard_iPhone.storyboard in Resources */,
+				481CBE2E1816FD3700762821 /* test.json in Resources */,
 				48A0D03017A99F4A00B819E5 /* .gitignore in Resources */,
 				48A0D03117A99F4A00B819E5 /* .travis.yml in Resources */,
 				48A0D03B17A99F4A00B819E5 /* AFNetworking.podspec in Resources */,
@@ -482,6 +491,7 @@
 			files = (
 				48A0CF9E17A83C1A00B819E5 /* main.m in Sources */,
 				48A0CFA217A83C1A00B819E5 /* DBAppDelegate.m in Sources */,
+				481CBE311817066500762821 /* DBDocumentsManager.m in Sources */,
 				48A0CFD117A846B900B819E5 /* DBvkLoginVC.m in Sources */,
 				48A0D03217A99F4A00B819E5 /* AFHTTPClient.m in Sources */,
 				48A0D03317A99F4A00B819E5 /* AFHTTPRequestOperation.m in Sources */,

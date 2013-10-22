@@ -13,7 +13,7 @@
 
 @interface ShariSocial : ShariObject
 @property (nonatomic, strong) ShariUser *user;
-@property (nonatomic, assign) NSUInteger id;
+@property (nonatomic, assign) NSInteger id;
 @property (nonatomic, strong) NSString *name;
 @property (nonatomic, strong) NSString *surname;
 @property (nonatomic, assign) NSInteger vkID;

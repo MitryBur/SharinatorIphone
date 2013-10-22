@@ -94,7 +94,7 @@
 {
     static NSString *CellIdentifier = @"Cell";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
-	ShariEvent *event = [self.events objectAtIndex:indexPath.row];
+	ShariEvent *event = (self.events)[indexPath.row];
     cell.textLabel.text = event.title;
     cell.detailTextLabel.text = event.description;
     return cell;
@@ -106,14 +106,14 @@
 
     if ([segue.identifier isEqual: @"AddEvent"]) {
         UINavigationController *naviController = segue.destinationViewController;
-        DBAddEventVC *addEventVB = [[naviController viewControllers] objectAtIndex:0];
+        DBAddEventVC *addEventVB = [naviController viewControllers][0];
         addEventVB.delegate = self;
         return;
     }
     
     if ([segue.identifier isEqual:@"EventDetails"]) {
         DBEventDetailsVC *eventDetailsVC = segue.destinationViewController;
-        ShariEvent *event = [self.events objectAtIndex:[self.tableView indexPathForSelectedRow].row];
+        ShariEvent *event = (self.events)[[self.tableView indexPathForSelectedRow].row];
         eventDetailsVC.event = event;
         return;
     }
