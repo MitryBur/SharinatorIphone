@@ -16,7 +16,9 @@
 @property (nonatomic, strong) VKAccessToken *vkToken;
 
 - (void)authenticate;
-- (void)get:(Class)class ;
+- (void)get:(Class)class;
+- (void)getLocally:(Class)class;
+
 - (void)post:(Class)class data:(NSDictionary *)dictionary;
 
 //Temp

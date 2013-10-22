@@ -12,6 +12,8 @@
 #import "ShariEvent.h"
 #import "ShariSocial.h"
 
+#import "DBDocumentsManager.h"
+
 
 static NSString * const kSharinatorAPIBaseURLString = @"http://shariserver.herokuapp.com/v1/";
 //static NSString * const kSharinatorAPIBaseURLString = @"http://localhost:3333/v1/";
@@ -46,8 +48,8 @@ static NSString * const kSharinatorAPIBaseURLString = @"http://shariserver.herok
     [self registerHTTPOperationClass:[AFHTTPRequestOperation class]];
     VKAccessManager *manager = [VKAccessManager sharedInstance];
     NSLog(@"%@, %d", manager.vkToken.token, manager.vkToken.vkID);
-    [parameters setObject:manager.vkToken.token forKey:@"access_token"];
-    [parameters setObject:[NSNumber numberWithInteger:manager.vkToken.vkID] forKey:@"user_id"];
+    parameters[@"access_token"] = manager.vkToken.token;
+    parameters[@"user_id"] = [NSNumber numberWithInteger:manager.vkToken.vkID];
 
     [self getPath:@"vk"
        parameters:parameters
@@ -70,7 +72,7 @@ static NSString * const kSharinatorAPIBaseURLString = @"http://shariserver.herok
     NSMutableDictionary  *parameters = [NSMutableDictionary  dictionary];
     VKAccessManager *manager = [VKAccessManager sharedInstance];
     NSLog(@"%@, %d", manager.vkToken.token, manager.vkToken.vkID);
-    [parameters setObject:manager.vkToken.token forKey:@"access_token"];
+    parameters[@"access_token"] = manager.vkToken.token;
     
     [self getPath:@"vk/friends"
        parameters:parameters
@@ -78,7 +80,7 @@ static NSString * const kSharinatorAPIBaseURLString = @"http://shariserver.herok
               if([self.delegate respondsToSelector:@selector(shariClient:didGetWithResponse:)])
               {
                   NSMutableArray *objects = [[NSMutableArray alloc] init];
-                  for (NSDictionary *d in [responseObject objectForKey:@"response"]) {
+                  for (NSDictionary *d in responseObject[@"response"]) {
                       id object = [[ShariSocial alloc] initWithRawDictionary:d];
                       [objects addObject:object];
                   }
@@ -99,7 +101,7 @@ static NSString * const kSharinatorAPIBaseURLString = @"http://shariserver.herok
     NSMutableDictionary  *parameters = [NSMutableDictionary  dictionary];
     VKAccessManager *manager = [VKAccessManager sharedInstance];
     NSLog(@"%@, %d", manager.vkToken.token, manager.vkToken.vkID);
-    [parameters setObject:manager.vkToken.token forKey:@"access_token"];
+    parameters[@"access_token"] = manager.vkToken.token;
     
     [self getPath:[class requestPath]
        parameters:parameters
@@ -119,13 +121,36 @@ static NSString * const kSharinatorAPIBaseURLString = @"http://shariserver.herok
                   [self.delegate shariClient:self didFailWithError:error];
           }];
 }
+
+- (void)getLocally:(Class)class{
+    
+    NSLog(@"%s",__FUNCTION__);
+    NSLog(@"%@",class);
+    NSString *fileName = @"test.json";//[NSString stringWithFormat:@"%@.%@", class, @"json"];
+    [DBDocumentsManager copyFileToDocuments:fileName];
+    NSString *fileContents = [DBDocumentsManager readFileFromDocuments:fileName];
+    NSLog(@"%@",fileContents);
+    NSData *data = [fileContents dataUsingEncoding:NSUTF8StringEncoding];
+    id responseObject = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
+    if([self.delegate respondsToSelector:@selector(shariClient:didGetWithResponse:)])
+    {
+        NSMutableArray *objects = [[NSMutableArray alloc] init];
+        for (NSDictionary *d in responseObject) {
+            id object = [[class alloc] initWithRawDictionary:d];
+            [objects addObject:object];
+        }
+        [self.delegate shariClient:self didGetWithResponse:objects];
+    }
+}
+
+
 - (void)post:(Class)class data:(NSDictionary *)dictionary{
     
     NSLog(@"%s",__FUNCTION__);
     NSMutableDictionary  *parameters = [NSMutableDictionary dictionaryWithDictionary:dictionary];
     VKAccessManager *manager = [VKAccessManager sharedInstance];
     NSLog(@"%@, %d", manager.vkToken.token, manager.vkToken.vkID);
-    [parameters setObject:manager.vkToken.token forKey:@"access_token"];
+    parameters[@"access_token"] = manager.vkToken.token;
 
     NSLog(@"%@", [parameters description]);
 
@@ -142,4 +167,8 @@ static NSString * const kSharinatorAPIBaseURLString = @"http://shariserver.herok
                   [self.delegate shariClient:self didFailWithError:error];
           }];
 }
+
+
+
+
 @end
