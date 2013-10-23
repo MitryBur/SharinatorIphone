@@ -6,7 +6,7 @@
 //  Copyright (c) 2013 Dmitry Burmistrov. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+@import UIKit;
 
 @interface DBvkLoginVC : UIViewController <UIWebViewDelegate, NSURLConnectionDataDelegate>
 @property (nonatomic, weak) IBOutlet UIWebView *webView;

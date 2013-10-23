@@ -6,9 +6,15 @@
 //  Copyright (c) 2013 Dmitry Burmistrov. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+@import UIKit;
+#import "ShariEvent.h"
 
 @interface DBEventInformationVC : UIViewController
-- (IBAction)cancel:(id)sender;
+@property (strong, nonatomic) ShariEvent *event;
 
+@property (weak, nonatomic) IBOutlet UILabel *titleLabel;
+@property (weak, nonatomic) IBOutlet UILabel *descriptionLabel;
+@property (weak, nonatomic) IBOutlet UIImageView *eventImage;
+
+- (IBAction)cancel:(id)sender;
 @end

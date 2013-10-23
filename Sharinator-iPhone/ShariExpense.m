@@ -1,14 +1,14 @@
 //
-//  ShariPurchase.m
+//  ShariExpense.m
 //  Sharinator-iPhone
 //
 //  Created by Dmitry Burmistrov on 23/10/13.
 //  Copyright (c) 2013 Dmitry Burmistrov. All rights reserved.
 //
 
-#import "ShariPurchase.h"
+#import "ShariExpense.h"
 
-@implementation ShariPurchase
+@implementation ShariExpense
 - (instancetype)initWithRawDictionary:(NSDictionary *)dictionary{
     if ((self = [self init])) {
         self.title = dictionary[@"title"];
@@ -22,6 +22,6 @@
 }
 
 + (NSString *)requestPath{
-    return @"purchases.json";
+    return @"expenses.json";
 }
 @end

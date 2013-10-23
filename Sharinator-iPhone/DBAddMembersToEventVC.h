@@ -6,7 +6,8 @@
 //  Copyright (c) 2013 Dmitry Burmistrov. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+@import UIKit;
+
 #import "ShariClient.h"
 
 @protocol DBAddMembersToEventVCDelegate;

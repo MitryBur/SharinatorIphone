@@ -7,7 +7,9 @@
 //
 
 #import "DBEventDetailsVC.h"
-#import "ShariPurchase.h"
+#import "DBMemberDetailsVC.h"
+#import "DBEventInformationVC.h"
+#import "ShariExpense.h"
 #import "ShariSocial.h"
 
 @interface DBEventDetailsVC ()
@@ -17,7 +19,7 @@
 @implementation DBEventDetailsVC
 {
     NSArray *members;
-    NSArray *purchases;
+    NSArray *expenses;
 }
 
 - (id)initWithStyle:(UITableViewStyle)style
@@ -72,7 +74,7 @@
     }
     else
         if (self.visibleDataSegmentedControl.selectedSegmentIndex == 1) {
-            return [purchases count];
+            return [expenses count];
         }
     return 0;
 }
@@ -82,7 +84,7 @@
     static NSString *CellIdentifier = @"Cell";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
 	ShariSocial *member = nil;
-    ShariPurchase *purchase = nil;
+    ShariExpense *expense = nil;
     switch (self.visibleDataSegmentedControl.selectedSegmentIndex) {
         case 0:
             member = members[indexPath.row];
@@ -90,9 +92,9 @@
             //cell.detailTextLabel.text = member.description;
             break;
         case 1:
-            purchase = purchases[indexPath.row];
-            cell.textLabel.text = purchase.title;
-            cell.detailTextLabel.text = purchase.description;
+            expense = expenses[indexPath.row];
+            cell.textLabel.text = expense.title;
+            cell.detailTextLabel.text = expense.description;
             break;
         default:
             break;
@@ -152,15 +154,15 @@
         if (!members)
             members = response;
         else
-            purchases = response;
+            expenses = response;
 
         [self.tableView reloadData];
         //[self.refreshControl endRefreshing];
         //return;
         
     }
-    if (purchases == nil)
-        [client getLocally:[ShariPurchase class]];
+    if (expenses == nil)
+        [client getLocally:[ShariExpense class]];
 
 }
 - (void)shariClient:(ShariClient *)client didFailWithError:(NSError *)error{
@@ -178,6 +180,20 @@
      // Pass the selected object to the new view controller.
      [self.navigationController pushViewController:detailViewController animated:YES];
      */
+    if (self.visibleDataSegmentedControl.selectedSegmentIndex == 0) {
+        [self performSegueWithIdentifier:@"MemberDetails" sender:self];
+    }
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+    if ([segue.identifier isEqualToString:@"MemberDetails"]) {
+        DBMemberDetailsVC *memberDetailsVC = segue.destinationViewController;
+        memberDetailsVC.title = ((ShariSocial *)members[[self.tableView indexPathForSelectedRow].row]).name;
+    }
+    else if ([segue.identifier isEqualToString:@"EventInfo"]){
+        DBEventInformationVC *eventInfoVC = segue.destinationViewController;
+        eventInfoVC.event = self.event;
+    }
 }
 
 @end

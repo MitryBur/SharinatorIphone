@@ -1,5 +1,5 @@
 //
-//  ShariPurchase.h
+//  ShariExpense.h
 //  Sharinator-iPhone
 //
 //  Created by Dmitry Burmistrov on 23/10/13.
@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 #import "ShariObject.h"
 
-@interface ShariPurchase : ShariObject
+@interface ShariExpense : ShariObject
 @property (nonatomic) NSString *title;
 @property (nonatomic) NSString *description;
 

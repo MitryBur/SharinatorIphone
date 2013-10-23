@@ -7,13 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4800F2241817EEE200784F09 /* DBMemberDetailsVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 4800F2231817EEE200784F09 /* DBMemberDetailsVC.m */; };
+		4800F2261818754100784F09 /* temp_account.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 4800F2251818754100784F09 /* temp_account.jpg */; };
+		4800F2281818793D00784F09 /* moderator-50.png in Resources */ = {isa = PBXBuildFile; fileRef = 4800F2271818793D00784F09 /* moderator-50.png */; };
+		4800F22A1818796D00784F09 /* credit_card-50.png in Resources */ = {isa = PBXBuildFile; fileRef = 4800F2291818796D00784F09 /* credit_card-50.png */; };
+		4800F22C18187AA200784F09 /* group-50.png in Resources */ = {isa = PBXBuildFile; fileRef = 4800F22B18187AA200784F09 /* group-50.png */; };
 		481CBE2E1816FD3700762821 /* test.json in Resources */ = {isa = PBXBuildFile; fileRef = 481CBE2D1816FD3700762821 /* test.json */; };
 		481CBE311817066500762821 /* DBDocumentsManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 481CBE301817066500762821 /* DBDocumentsManager.m */; };
 		4833165617B040E000F43569 /* DBEventsVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 4833165517B040E000F43569 /* DBEventsVC.m */; };
 		4842630017B2ED4F00CFDA0F /* DBAddEventVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 484262FF17B2ED4F00CFDA0F /* DBAddEventVC.m */; };
 		4842630417B432C800CFDA0F /* DBAddMembersToEventVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 4842630317B432C800CFDA0F /* DBAddMembersToEventVC.m */; };
-		4858CF7D1817CA2100862B33 /* ShariPurchase.m in Sources */ = {isa = PBXBuildFile; fileRef = 4858CF7C1817CA2100862B33 /* ShariPurchase.m */; };
-		4858CF7F1817CB0E00862B33 /* ShariPurchase.json in Resources */ = {isa = PBXBuildFile; fileRef = 4858CF7E1817CB0E00862B33 /* ShariPurchase.json */; };
+		4858CF7D1817CA2100862B33 /* ShariExpense.m in Sources */ = {isa = PBXBuildFile; fileRef = 4858CF7C1817CA2100862B33 /* ShariExpense.m */; };
+		4858CF7F1817CB0E00862B33 /* ShariExpense.json in Resources */ = {isa = PBXBuildFile; fileRef = 4858CF7E1817CB0E00862B33 /* ShariExpense.json */; };
 		4858CF811817CB7200862B33 /* ShariSocial.json in Resources */ = {isa = PBXBuildFile; fileRef = 4858CF801817CB7200862B33 /* ShariSocial.json */; };
 		48A0CF9217A83C1900B819E5 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 48A0CF9117A83C1900B819E5 /* UIKit.framework */; };
 		48A0CF9417A83C1900B819E5 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 48A0CF9317A83C1900B819E5 /* Foundation.framework */; };
@@ -75,6 +80,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4800F2221817EEE200784F09 /* DBMemberDetailsVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DBMemberDetailsVC.h; sourceTree = "<group>"; };
+		4800F2231817EEE200784F09 /* DBMemberDetailsVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DBMemberDetailsVC.m; sourceTree = "<group>"; };
+		4800F2251818754100784F09 /* temp_account.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = temp_account.jpg; sourceTree = "<group>"; };
+		4800F2271818793D00784F09 /* moderator-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "moderator-50.png"; sourceTree = "<group>"; };
+		4800F2291818796D00784F09 /* credit_card-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "credit_card-50.png"; sourceTree = "<group>"; };
+		4800F22B18187AA200784F09 /* group-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "group-50.png"; sourceTree = "<group>"; };
 		481CBE2D1816FD3700762821 /* test.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = test.json; sourceTree = "<group>"; };
 		481CBE2F1817066500762821 /* DBDocumentsManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DBDocumentsManager.h; sourceTree = "<group>"; };
 		481CBE301817066500762821 /* DBDocumentsManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DBDocumentsManager.m; sourceTree = "<group>"; };
@@ -84,9 +95,9 @@
 		484262FF17B2ED4F00CFDA0F /* DBAddEventVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DBAddEventVC.m; sourceTree = "<group>"; };
 		4842630217B432C800CFDA0F /* DBAddMembersToEventVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DBAddMembersToEventVC.h; sourceTree = "<group>"; };
 		4842630317B432C800CFDA0F /* DBAddMembersToEventVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DBAddMembersToEventVC.m; sourceTree = "<group>"; };
-		4858CF7B1817CA2100862B33 /* ShariPurchase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShariPurchase.h; sourceTree = "<group>"; };
-		4858CF7C1817CA2100862B33 /* ShariPurchase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShariPurchase.m; sourceTree = "<group>"; };
-		4858CF7E1817CB0E00862B33 /* ShariPurchase.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = ShariPurchase.json; sourceTree = "<group>"; };
+		4858CF7B1817CA2100862B33 /* ShariExpense.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShariExpense.h; sourceTree = "<group>"; };
+		4858CF7C1817CA2100862B33 /* ShariExpense.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShariExpense.m; sourceTree = "<group>"; };
+		4858CF7E1817CB0E00862B33 /* ShariExpense.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = ShariExpense.json; sourceTree = "<group>"; };
 		4858CF801817CB7200862B33 /* ShariSocial.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = ShariSocial.json; sourceTree = "<group>"; };
 		48A0CF8E17A83C1900B819E5 /* Sharinator-iPhone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Sharinator-iPhone.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		48A0CF9117A83C1900B819E5 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
@@ -249,6 +260,8 @@
 				48CBDC1018146EAD00241BF8 /* DBEventDetailsVC.m */,
 				48CBDC121814713500241BF8 /* DBEventInformationVC.h */,
 				48CBDC131814713500241BF8 /* DBEventInformationVC.m */,
+				4800F2221817EEE200784F09 /* DBMemberDetailsVC.h */,
+				4800F2231817EEE200784F09 /* DBMemberDetailsVC.m */,
 			);
 			path = "Sharinator-iPhone";
 			sourceTree = "<group>";
@@ -256,6 +269,10 @@
 		48A0CF9817A83C1A00B819E5 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				4800F22B18187AA200784F09 /* group-50.png */,
+				4800F2271818793D00784F09 /* moderator-50.png */,
+				4800F2291818796D00784F09 /* credit_card-50.png */,
+				4800F2251818754100784F09 /* temp_account.jpg */,
 				48A0CF9917A83C1A00B819E5 /* Sharinator-iPhone-Info.plist */,
 				48A0CF9A17A83C1A00B819E5 /* InfoPlist.strings */,
 				48A0CF9D17A83C1A00B819E5 /* main.m */,
@@ -264,7 +281,7 @@
 				48A0CFA517A83C1A00B819E5 /* Default@2x.png */,
 				48A0CFA717A83C1A00B819E5 /* Default-568h@2x.png */,
 				481CBE2D1816FD3700762821 /* test.json */,
-				4858CF7E1817CB0E00862B33 /* ShariPurchase.json */,
+				4858CF7E1817CB0E00862B33 /* ShariExpense.json */,
 				4858CF801817CB7200862B33 /* ShariSocial.json */,
 			);
 			name = "Supporting Files";
@@ -352,8 +369,8 @@
 				48C5E24117B7A98800B088A1 /* ShariObject.m */,
 				48CBDC091814041300241BF8 /* ShariMember.h */,
 				48CBDC0A1814041300241BF8 /* ShariMember.m */,
-				4858CF7B1817CA2100862B33 /* ShariPurchase.h */,
-				4858CF7C1817CA2100862B33 /* ShariPurchase.m */,
+				4858CF7B1817CA2100862B33 /* ShariExpense.h */,
+				4858CF7C1817CA2100862B33 /* ShariExpense.m */,
 			);
 			name = "Value Objects";
 			sourceTree = "<group>";
@@ -455,8 +472,10 @@
 				48A0CF9C17A83C1A00B819E5 /* InfoPlist.strings in Resources */,
 				48A0CFA417A83C1A00B819E5 /* Default.png in Resources */,
 				48A0CFA617A83C1A00B819E5 /* Default@2x.png in Resources */,
+				4800F22A1818796D00784F09 /* credit_card-50.png in Resources */,
 				48A0CFA817A83C1A00B819E5 /* Default-568h@2x.png in Resources */,
 				48A0CFAB17A83C1A00B819E5 /* MainStoryboard_iPhone.storyboard in Resources */,
+				4800F2261818754100784F09 /* temp_account.jpg in Resources */,
 				481CBE2E1816FD3700762821 /* test.json in Resources */,
 				48A0D03017A99F4A00B819E5 /* .gitignore in Resources */,
 				4858CF811817CB7200862B33 /* ShariSocial.json in Resources */,
@@ -467,7 +486,9 @@
 				48A0D05217A99F4A00B819E5 /* LICENSE in Resources */,
 				48A0D05317A99F4A00B819E5 /* Rakefile in Resources */,
 				48A0D05417A99F4A00B819E5 /* README.md in Resources */,
-				4858CF7F1817CB0E00862B33 /* ShariPurchase.json in Resources */,
+				4800F2281818793D00784F09 /* moderator-50.png in Resources */,
+				4800F22C18187AA200784F09 /* group-50.png in Resources */,
+				4858CF7F1817CB0E00862B33 /* ShariExpense.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -505,7 +526,7 @@
 				48A0CF9E17A83C1A00B819E5 /* main.m in Sources */,
 				48A0CFA217A83C1A00B819E5 /* DBAppDelegate.m in Sources */,
 				481CBE311817066500762821 /* DBDocumentsManager.m in Sources */,
-				4858CF7D1817CA2100862B33 /* ShariPurchase.m in Sources */,
+				4858CF7D1817CA2100862B33 /* ShariExpense.m in Sources */,
 				48A0CFD117A846B900B819E5 /* DBvkLoginVC.m in Sources */,
 				48A0D03217A99F4A00B819E5 /* AFHTTPClient.m in Sources */,
 				48A0D03317A99F4A00B819E5 /* AFHTTPRequestOperation.m in Sources */,
@@ -513,6 +534,7 @@
 				48A0D03517A99F4A00B819E5 /* AFJSONRequestOperation.m in Sources */,
 				48A0D03617A99F4A00B819E5 /* AFNetworkActivityIndicatorManager.m in Sources */,
 				48A0D03717A99F4A00B819E5 /* AFPropertyListRequestOperation.m in Sources */,
+				4800F2241817EEE200784F09 /* DBMemberDetailsVC.m in Sources */,
 				48A0D03817A99F4A00B819E5 /* AFURLConnectionOperation.m in Sources */,
 				48A0D03917A99F4A00B819E5 /* AFXMLRequestOperation.m in Sources */,
 				48A0D03A17A99F4A00B819E5 /* UIImageView+AFNetworking.m in Sources */,
