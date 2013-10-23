@@ -7,12 +7,18 @@
 //
 
 #import "DBEventDetailsVC.h"
+#import "ShariPurchase.h"
+#import "ShariSocial.h"
 
 @interface DBEventDetailsVC ()
 
 @end
 
 @implementation DBEventDetailsVC
+{
+    NSArray *members;
+    NSArray *purchases;
+}
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -28,6 +34,10 @@
     [super viewDidLoad];
     
     self.title = self.event.title;
+    
+    ShariClient *client = [ShariClient sharedInstance];
+    client.delegate = self;
+    [client getLocally:[ShariSocial class]];
 
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
@@ -42,6 +52,10 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (IBAction)visibleDataSegmentedControlChanged:(id)sender {
+    [self.tableView reloadData];
+}
+
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
@@ -52,8 +66,14 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-#warning Incomplete method implementation.
     // Return the number of rows in the section.
+    if (self.visibleDataSegmentedControl.selectedSegmentIndex == 0) {
+        return [members count];
+    }
+    else
+        if (self.visibleDataSegmentedControl.selectedSegmentIndex == 1) {
+            return [purchases count];
+        }
     return 0;
 }
 
@@ -61,9 +81,23 @@
 {
     static NSString *CellIdentifier = @"Cell";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
-    
-    // Configure the cell...
-    
+	ShariSocial *member = nil;
+    ShariPurchase *purchase = nil;
+    switch (self.visibleDataSegmentedControl.selectedSegmentIndex) {
+        case 0:
+            member = members[indexPath.row];
+            cell.textLabel.text = member.name;
+            //cell.detailTextLabel.text = member.description;
+            break;
+        case 1:
+            purchase = purchases[indexPath.row];
+            cell.textLabel.text = purchase.title;
+            cell.detailTextLabel.text = purchase.description;
+            break;
+        default:
+            break;
+    } 
+
     return cell;
 }
 
@@ -105,6 +139,33 @@
     return YES;
 }
 */
+
+#pragma mark - ShariClient delegate
+- (void)shariClient:(ShariClient *)client didGetWithResponse:(id)response{
+    
+    NSLog(@"%s", __FUNCTION__);
+    NSLog(@"%@", [response description]);
+    
+    //Any response objects are packed into array
+    if ([response isKindOfClass:[NSArray class]])
+    {
+        if (!members)
+            members = response;
+        else
+            purchases = response;
+
+        [self.tableView reloadData];
+        //[self.refreshControl endRefreshing];
+        //return;
+        
+    }
+    if (purchases == nil)
+        [client getLocally:[ShariPurchase class]];
+
+}
+- (void)shariClient:(ShariClient *)client didFailWithError:(NSError *)error{
+    NSLog(@"Error: %@", error);
+}
 
 #pragma mark - Table view delegate
 

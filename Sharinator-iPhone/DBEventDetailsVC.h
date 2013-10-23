@@ -9,9 +9,12 @@
 @import UIKit;
 
 #import "ShariEvent.h"
+#import "ShariClient.h"
 
-@interface DBEventDetailsVC : UITableViewController
+@interface DBEventDetailsVC : UITableViewController <ShariClientDelegate>
 @property (weak, nonatomic) IBOutlet UISegmentedControl *visibleDataSegmentedControl;
 @property (strong, nonatomic) ShariEvent *event;
+
+- (IBAction)visibleDataSegmentedControlChanged:(id)sender;
 
 @end

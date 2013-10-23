@@ -110,6 +110,7 @@ static NSString * const kSharinatorAPIBaseURLString = @"http://shariserver.herok
               {
                   NSMutableArray *objects = [[NSMutableArray alloc] init];
                   for (NSDictionary *d in responseObject) {
+                      NSLog(@"aaa %@", d);
                       id object = [[class alloc] initWithRawDictionary:d];
                       [objects addObject:object];
                   }
@@ -126,7 +127,7 @@ static NSString * const kSharinatorAPIBaseURLString = @"http://shariserver.herok
     
     NSLog(@"%s",__FUNCTION__);
     NSLog(@"%@",class);
-    NSString *fileName = @"test.json";//[NSString stringWithFormat:@"%@.%@", class, @"json"];
+    NSString *fileName = [NSString stringWithFormat:@"%@.%@", class, @"json"];
     [DBDocumentsManager copyFileToDocuments:fileName];
     NSString *fileContents = [DBDocumentsManager readFileFromDocuments:fileName];
     NSLog(@"%@",fileContents);
@@ -136,6 +137,8 @@ static NSString * const kSharinatorAPIBaseURLString = @"http://shariserver.herok
     {
         NSMutableArray *objects = [[NSMutableArray alloc] init];
         for (NSDictionary *d in responseObject) {
+            NSLog(@"aaa %@", d);
+
             id object = [[class alloc] initWithRawDictionary:d];
             [objects addObject:object];
         }

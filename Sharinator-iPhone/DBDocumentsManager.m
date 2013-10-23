@@ -19,7 +19,7 @@
     NSError *error;
     NSString *documentsDirectory = [DBDocumentsManager applicationDocumentsDirectory];
     NSString *jsonPath = [documentsDirectory stringByAppendingPathComponent:filename];
-    
+
     /*if ([fileManager fileExistsAtPath:txtPath] == NO) {
      NSString *resourcePath = [[NSBundle mainBundle] pathForResource:@"txtFile" ofType:@"txt"];
      [fileManager copyItemAtPath:resourcePath toPath:txtPath error:&error];
@@ -30,7 +30,7 @@
         [fileManager removeItemAtPath:jsonPath error:&error];
     }
     
-    NSString *fileNameNoExtension = [filename stringByDeletingLastPathComponent];
+    NSString *fileNameNoExtension = [filename stringByDeletingPathExtension];
     NSString *extension = [filename pathExtension];
     
     NSString *resourcePath = [[NSBundle mainBundle] pathForResource:fileNameNoExtension ofType:extension];

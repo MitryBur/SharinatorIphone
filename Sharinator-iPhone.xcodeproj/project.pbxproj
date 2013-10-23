@@ -12,6 +12,9 @@
 		4833165617B040E000F43569 /* DBEventsVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 4833165517B040E000F43569 /* DBEventsVC.m */; };
 		4842630017B2ED4F00CFDA0F /* DBAddEventVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 484262FF17B2ED4F00CFDA0F /* DBAddEventVC.m */; };
 		4842630417B432C800CFDA0F /* DBAddMembersToEventVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 4842630317B432C800CFDA0F /* DBAddMembersToEventVC.m */; };
+		4858CF7D1817CA2100862B33 /* ShariPurchase.m in Sources */ = {isa = PBXBuildFile; fileRef = 4858CF7C1817CA2100862B33 /* ShariPurchase.m */; };
+		4858CF7F1817CB0E00862B33 /* ShariPurchase.json in Resources */ = {isa = PBXBuildFile; fileRef = 4858CF7E1817CB0E00862B33 /* ShariPurchase.json */; };
+		4858CF811817CB7200862B33 /* ShariSocial.json in Resources */ = {isa = PBXBuildFile; fileRef = 4858CF801817CB7200862B33 /* ShariSocial.json */; };
 		48A0CF9217A83C1900B819E5 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 48A0CF9117A83C1900B819E5 /* UIKit.framework */; };
 		48A0CF9417A83C1900B819E5 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 48A0CF9317A83C1900B819E5 /* Foundation.framework */; };
 		48A0CF9617A83C1900B819E5 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 48A0CF9517A83C1900B819E5 /* CoreGraphics.framework */; };
@@ -81,6 +84,10 @@
 		484262FF17B2ED4F00CFDA0F /* DBAddEventVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DBAddEventVC.m; sourceTree = "<group>"; };
 		4842630217B432C800CFDA0F /* DBAddMembersToEventVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DBAddMembersToEventVC.h; sourceTree = "<group>"; };
 		4842630317B432C800CFDA0F /* DBAddMembersToEventVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DBAddMembersToEventVC.m; sourceTree = "<group>"; };
+		4858CF7B1817CA2100862B33 /* ShariPurchase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShariPurchase.h; sourceTree = "<group>"; };
+		4858CF7C1817CA2100862B33 /* ShariPurchase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShariPurchase.m; sourceTree = "<group>"; };
+		4858CF7E1817CB0E00862B33 /* ShariPurchase.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = ShariPurchase.json; sourceTree = "<group>"; };
+		4858CF801817CB7200862B33 /* ShariSocial.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = ShariSocial.json; sourceTree = "<group>"; };
 		48A0CF8E17A83C1900B819E5 /* Sharinator-iPhone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Sharinator-iPhone.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		48A0CF9117A83C1900B819E5 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		48A0CF9317A83C1900B819E5 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -257,6 +264,8 @@
 				48A0CFA517A83C1A00B819E5 /* Default@2x.png */,
 				48A0CFA717A83C1A00B819E5 /* Default-568h@2x.png */,
 				481CBE2D1816FD3700762821 /* test.json */,
+				4858CF7E1817CB0E00862B33 /* ShariPurchase.json */,
+				4858CF801817CB7200862B33 /* ShariSocial.json */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -343,6 +352,8 @@
 				48C5E24117B7A98800B088A1 /* ShariObject.m */,
 				48CBDC091814041300241BF8 /* ShariMember.h */,
 				48CBDC0A1814041300241BF8 /* ShariMember.m */,
+				4858CF7B1817CA2100862B33 /* ShariPurchase.h */,
+				4858CF7C1817CA2100862B33 /* ShariPurchase.m */,
 			);
 			name = "Value Objects";
 			sourceTree = "<group>";
@@ -448,6 +459,7 @@
 				48A0CFAB17A83C1A00B819E5 /* MainStoryboard_iPhone.storyboard in Resources */,
 				481CBE2E1816FD3700762821 /* test.json in Resources */,
 				48A0D03017A99F4A00B819E5 /* .gitignore in Resources */,
+				4858CF811817CB7200862B33 /* ShariSocial.json in Resources */,
 				48A0D03117A99F4A00B819E5 /* .travis.yml in Resources */,
 				48A0D03B17A99F4A00B819E5 /* AFNetworking.podspec in Resources */,
 				48A0D03C17A99F4A00B819E5 /* AFNetworking.xcworkspace in Resources */,
@@ -455,6 +467,7 @@
 				48A0D05217A99F4A00B819E5 /* LICENSE in Resources */,
 				48A0D05317A99F4A00B819E5 /* Rakefile in Resources */,
 				48A0D05417A99F4A00B819E5 /* README.md in Resources */,
+				4858CF7F1817CB0E00862B33 /* ShariPurchase.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -492,6 +505,7 @@
 				48A0CF9E17A83C1A00B819E5 /* main.m in Sources */,
 				48A0CFA217A83C1A00B819E5 /* DBAppDelegate.m in Sources */,
 				481CBE311817066500762821 /* DBDocumentsManager.m in Sources */,
+				4858CF7D1817CA2100862B33 /* ShariPurchase.m in Sources */,
 				48A0CFD117A846B900B819E5 /* DBvkLoginVC.m in Sources */,
 				48A0D03217A99F4A00B819E5 /* AFHTTPClient.m in Sources */,
 				48A0D03317A99F4A00B819E5 /* AFHTTPRequestOperation.m in Sources */,
