@@ -1,18 +1,18 @@
 //
-//  DBMemberDetailsVC.m
+//  DBExpenseMembersVC.m
 //  Sharinator-iPhone
 //
-//  Created by Dmitry Burmistrov on 23/10/13.
+//  Created by Dmitry Burmistrov on 25/10/13.
 //  Copyright (c) 2013 Dmitry Burmistrov. All rights reserved.
 //
 
-#import "DBMemberDetailsVC.h"
+#import "DBExpenseMembersVC.h"
 
-@interface DBMemberDetailsVC ()
+@interface DBExpenseMembersVC ()
 
 @end
 
-@implementation DBMemberDetailsVC
+@implementation DBExpenseMembersVC
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -32,6 +32,7 @@
  
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    self.tableView.contentInset = UIEdgeInsetsMake(-65, 0, 0, 0);
 }
 
 - (void)didReceiveMemoryWarning
@@ -45,32 +46,23 @@
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
     // Return the number of sections.
-    return 2;
+    return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     // Return the number of rows in the section.
-    return 1;
+    return 2;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *CellIdentifier = @"Cell";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
-    cell.textLabel.text = @"Надувная кукла";
+    cell.textLabel.text = @"Beatch";
     // Configure the cell...
     
     return cell;
-}
-
-- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section{
-    if (!section) {
-        return @"Купил";
-    }
-    else{
-        return @"Участвовал";
-    }
 }
 
 /*
