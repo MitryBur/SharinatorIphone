@@ -9,9 +9,9 @@
 /* Begin PBXBuildFile section */
 		4800F2241817EEE200784F09 /* DBMemberDetailsVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 4800F2231817EEE200784F09 /* DBMemberDetailsVC.m */; };
 		4800F2261818754100784F09 /* temp_account.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 4800F2251818754100784F09 /* temp_account.jpg */; };
-		4800F2281818793D00784F09 /* moderator-50.png in Resources */ = {isa = PBXBuildFile; fileRef = 4800F2271818793D00784F09 /* moderator-50.png */; };
-		4800F22A1818796D00784F09 /* credit_card-50.png in Resources */ = {isa = PBXBuildFile; fileRef = 4800F2291818796D00784F09 /* credit_card-50.png */; };
-		4800F22C18187AA200784F09 /* group-50.png in Resources */ = {isa = PBXBuildFile; fileRef = 4800F22B18187AA200784F09 /* group-50.png */; };
+		4800F2281818793D00784F09 /* moderator-50@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4800F2271818793D00784F09 /* moderator-50@2x.png */; };
+		4800F22A1818796D00784F09 /* credit_card-50@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4800F2291818796D00784F09 /* credit_card-50@2x.png */; };
+		4800F22C18187AA200784F09 /* group-50@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4800F22B18187AA200784F09 /* group-50@2x.png */; };
 		481CBE2E1816FD3700762821 /* test.json in Resources */ = {isa = PBXBuildFile; fileRef = 481CBE2D1816FD3700762821 /* test.json */; };
 		481CBE311817066500762821 /* DBDocumentsManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 481CBE301817066500762821 /* DBDocumentsManager.m */; };
 		4833165617B040E000F43569 /* DBEventsVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 4833165517B040E000F43569 /* DBEventsVC.m */; };
@@ -83,9 +83,9 @@
 		4800F2221817EEE200784F09 /* DBMemberDetailsVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DBMemberDetailsVC.h; sourceTree = "<group>"; };
 		4800F2231817EEE200784F09 /* DBMemberDetailsVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DBMemberDetailsVC.m; sourceTree = "<group>"; };
 		4800F2251818754100784F09 /* temp_account.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = temp_account.jpg; sourceTree = "<group>"; };
-		4800F2271818793D00784F09 /* moderator-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "moderator-50.png"; sourceTree = "<group>"; };
-		4800F2291818796D00784F09 /* credit_card-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "credit_card-50.png"; sourceTree = "<group>"; };
-		4800F22B18187AA200784F09 /* group-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "group-50.png"; sourceTree = "<group>"; };
+		4800F2271818793D00784F09 /* moderator-50@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "moderator-50@2x.png"; sourceTree = "<group>"; };
+		4800F2291818796D00784F09 /* credit_card-50@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "credit_card-50@2x.png"; sourceTree = "<group>"; };
+		4800F22B18187AA200784F09 /* group-50@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "group-50@2x.png"; sourceTree = "<group>"; };
 		481CBE2D1816FD3700762821 /* test.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = test.json; sourceTree = "<group>"; };
 		481CBE2F1817066500762821 /* DBDocumentsManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DBDocumentsManager.h; sourceTree = "<group>"; };
 		481CBE301817066500762821 /* DBDocumentsManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DBDocumentsManager.m; sourceTree = "<group>"; };
@@ -269,9 +269,9 @@
 		48A0CF9817A83C1A00B819E5 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				4800F22B18187AA200784F09 /* group-50.png */,
-				4800F2271818793D00784F09 /* moderator-50.png */,
-				4800F2291818796D00784F09 /* credit_card-50.png */,
+				4800F22B18187AA200784F09 /* group-50@2x.png */,
+				4800F2271818793D00784F09 /* moderator-50@2x.png */,
+				4800F2291818796D00784F09 /* credit_card-50@2x.png */,
 				4800F2251818754100784F09 /* temp_account.jpg */,
 				48A0CF9917A83C1A00B819E5 /* Sharinator-iPhone-Info.plist */,
 				48A0CF9A17A83C1A00B819E5 /* InfoPlist.strings */,
@@ -472,7 +472,7 @@
 				48A0CF9C17A83C1A00B819E5 /* InfoPlist.strings in Resources */,
 				48A0CFA417A83C1A00B819E5 /* Default.png in Resources */,
 				48A0CFA617A83C1A00B819E5 /* Default@2x.png in Resources */,
-				4800F22A1818796D00784F09 /* credit_card-50.png in Resources */,
+				4800F22A1818796D00784F09 /* credit_card-50@2x.png in Resources */,
 				48A0CFA817A83C1A00B819E5 /* Default-568h@2x.png in Resources */,
 				48A0CFAB17A83C1A00B819E5 /* MainStoryboard_iPhone.storyboard in Resources */,
 				4800F2261818754100784F09 /* temp_account.jpg in Resources */,
@@ -486,8 +486,8 @@
 				48A0D05217A99F4A00B819E5 /* LICENSE in Resources */,
 				48A0D05317A99F4A00B819E5 /* Rakefile in Resources */,
 				48A0D05417A99F4A00B819E5 /* README.md in Resources */,
-				4800F2281818793D00784F09 /* moderator-50.png in Resources */,
-				4800F22C18187AA200784F09 /* group-50.png in Resources */,
+				4800F2281818793D00784F09 /* moderator-50@2x.png in Resources */,
+				4800F22C18187AA200784F09 /* group-50@2x.png in Resources */,
 				4858CF7F1817CB0E00862B33 /* ShariExpense.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
