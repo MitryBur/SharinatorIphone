@@ -12,5 +12,9 @@
 @interface ShariExpense : ShariObject
 @property (nonatomic) NSString *title;
 @property (nonatomic) NSString *description;
+@property (nonatomic) NSString *currency;
+@property (nonatomic) NSNumber *price;
+@property (nonatomic) NSInteger payerID;
+@property (nonatomic) NSArray *members;
 
 @end

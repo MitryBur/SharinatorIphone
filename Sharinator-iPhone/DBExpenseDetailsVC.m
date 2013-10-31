@@ -27,6 +27,10 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
+    self.title = self.expense.title;
+    self.payerLabel.text = [NSString stringWithFormat:@"%d", self.expense.payerID];
+    self.priceLabel.text = [self.expense.price stringValue];
+    self.currencyLabel.text = self.expense.currency;
 }
 
 - (void)didReceiveMemoryWarning

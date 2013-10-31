@@ -68,7 +68,9 @@
     }
 }
 -(void)reloadDataFromWeb{
-    [[ShariClient sharedInstance] get:[ShariEvent class]];
+    ShariClient *client = [ShariClient sharedInstance];
+    client.delegate = self;
+    [client get:[ShariEvent class]];
 }
 - (void)didReceiveMemoryWarning
 {
@@ -197,6 +199,8 @@
 
 - (void)shariClient:(ShariClient *)client didFailWithError:(NSError *)error{
     NSLog(@"Error: %@", error);
+    [self.refreshControl endRefreshing];
+
 }
 
 #pragma mark - DBAddEventVC delegate

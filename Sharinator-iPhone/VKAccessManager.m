@@ -19,6 +19,8 @@
     UIViewController *_parentVC;
 }
 
+
+
 + (VKAccessManager *) sharedInstance
 {
     static VKAccessManager *sharedInstance = nil;
@@ -27,6 +29,13 @@
         sharedInstance = [[VKAccessManager alloc] init];
     });
     return sharedInstance;
+}
+
+-(void)viewDidLoad{
+    [super viewDidLoad];
+    UIView *view = [[UIView alloc] initWithFrame:[UIScreen mainScreen].bounds];
+    view.backgroundColor = [UIColor whiteColor];
+    self.view = view;
 }
 
 - (BOOL)parseTokenURL:(NSString *)urlString
@@ -87,9 +96,12 @@
         CGRect screenBounds = [[UIScreen mainScreen] bounds];
         //Status bar height = 20
         screenBounds.origin.y += 20;
-        screenBounds.size.height -= 20;
+        //screenBounds.size.height -= 20;
         NSLog(@"Width: %f Height:%f",screenBounds.size.width, screenBounds.size.height);
-        self.webView = [[UIWebView alloc] initWithFrame: screenBounds];
+        self.webView = [[UIWebView alloc] initWithFrame: CGRectMake(0, 20, screenBounds.size.width, screenBounds.size.height)];
+        self.webView.scalesPageToFit = YES;
+        self.webView.autoresizingMask = (UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight);
+        self.webView.delegate = self;
     }
      NSURL *vkAuthUrl = [NSURL URLWithString:@"http://oauth.vk.com/authorize?"
      "client_id=3759886&"
@@ -98,12 +110,10 @@
      "response_type=token"];
      NSURLRequest *request = [NSURLRequest requestWithURL:vkAuthUrl];
     
-     self.webView.delegate = self;
     [self.webView loadRequest:request];
     [self.view addSubview:self.webView];
     self.modalTransitionStyle = UIModalTransitionStyleFlipHorizontal;
     [parentVC presentViewController:self animated:YES completion:NULL];
-    
     return nil;
 }
 - (VKAccessToken *) vkToken{

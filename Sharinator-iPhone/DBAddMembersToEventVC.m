@@ -62,6 +62,14 @@
     NSIndexPath *index = [self.tableView indexPathForRowAtPoint:point];
     UITableViewCell *cell = [self.tableView cellForRowAtIndexPath:index];
     cell.textLabel.text = @"Perfect";
+    
+    CGSize size = [cell.textLabel.text sizeWithFont:cell.textLabel.font];
+    CGFloat y = cell.contentView.frame.size.height/2;
+    UIView *line = [[UIView alloc] initWithFrame:CGRectMake(15, y, size.width, 3)];
+    line.backgroundColor = [UIColor redColor];
+    [cell.contentView addSubview:line];
+    
+    
     NSLog(@"Swiped");
 }
 

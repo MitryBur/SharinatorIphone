@@ -35,7 +35,7 @@ static NSString* const kVKTokenKey = @"vk_token";
 {    
     if (self = [super init]) {
         self.vkID = vkID;
-        self.token = [token copy];
+        self.token = token;
         self.expirationInterval = expirationInterval;
         self.creationTime = [[NSDate date] timeIntervalSince1970];
     }

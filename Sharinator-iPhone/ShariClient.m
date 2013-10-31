@@ -116,6 +116,9 @@ static NSString * const kSharinatorAPIBaseURLString = @"http://shariserver.herok
                   }
                   [self.delegate shariClient:self didGetWithResponse:objects];
               }
+              else {
+                  NSLog(@"Delegate is nil");
+              }
           }
           failure:^(AFHTTPRequestOperation *operation, NSError  *error) {
               if([self.delegate respondsToSelector:@selector(shariClient:didFailWithError:)])

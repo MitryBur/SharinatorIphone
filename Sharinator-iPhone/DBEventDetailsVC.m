@@ -9,6 +9,7 @@
 #import "DBEventDetailsVC.h"
 #import "DBMemberDetailsVC.h"
 #import "DBEventInformationVC.h"
+#import "DBExpenseDetailsVC.h"
 #import "ShariExpense.h"
 #import "ShariSocial.h"
 
@@ -89,7 +90,7 @@
         case 0:
             member = members[indexPath.row];
             cell.textLabel.text = member.name;
-            //cell.detailTextLabel.text = member.description;
+            cell.detailTextLabel.text = @"";
             break;
         case 1:
             expense = expenses[indexPath.row];
@@ -183,6 +184,9 @@
     if (self.visibleDataSegmentedControl.selectedSegmentIndex == 0) {
         [self performSegueWithIdentifier:@"MemberDetails" sender:self];
     }
+    else if (self.visibleDataSegmentedControl.selectedSegmentIndex == 1) {
+        [self performSegueWithIdentifier:@"ExpenseDetails" sender:self];
+    }
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
@@ -193,6 +197,13 @@
     else if ([segue.identifier isEqualToString:@"EventInfo"]){
         DBEventInformationVC *eventInfoVC = segue.destinationViewController;
         eventInfoVC.event = self.event;
+    }
+    else if ([segue.identifier isEqualToString:@"ExpenseDetails"]) {
+        DBExpenseDetailsVC *expenseDetailsVC = segue.destinationViewController;
+        expenseDetailsVC.expense = ((ShariExpense *)expenses[[self.tableView indexPathForSelectedRow].row]);
+        ;
+        //expenseDetailsVC.title = ((ShariExpense *)expenses[[self.tableView indexPathForSelectedRow].row]).title;
+        //expenseDetailsVC.payer.text =@"Митя";
     }
 }
 

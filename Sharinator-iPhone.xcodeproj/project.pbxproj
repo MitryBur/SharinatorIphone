@@ -33,12 +33,6 @@
 		48A0CFA617A83C1A00B819E5 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 48A0CFA517A83C1A00B819E5 /* Default@2x.png */; };
 		48A0CFA817A83C1A00B819E5 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 48A0CFA717A83C1A00B819E5 /* Default-568h@2x.png */; };
 		48A0CFAB17A83C1A00B819E5 /* MainStoryboard_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 48A0CFA917A83C1A00B819E5 /* MainStoryboard_iPhone.storyboard */; };
-		48A0CFB917A83C1A00B819E5 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 48A0CFB817A83C1A00B819E5 /* SenTestingKit.framework */; };
-		48A0CFBA17A83C1A00B819E5 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 48A0CF9117A83C1900B819E5 /* UIKit.framework */; };
-		48A0CFBB17A83C1A00B819E5 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 48A0CF9317A83C1900B819E5 /* Foundation.framework */; };
-		48A0CFC317A83C1A00B819E5 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 48A0CFC117A83C1A00B819E5 /* InfoPlist.strings */; };
-		48A0CFC617A83C1A00B819E5 /* Sharinator_iPhoneTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 48A0CFC517A83C1A00B819E5 /* Sharinator_iPhoneTests.m */; };
-		48A0CFD117A846B900B819E5 /* DBvkLoginVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 48A0CFD017A846B900B819E5 /* DBvkLoginVC.m */; };
 		48A0D03017A99F4A00B819E5 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 48A0CFD317A99F4900B819E5 /* .gitignore */; };
 		48A0D03117A99F4A00B819E5 /* .travis.yml in Resources */ = {isa = PBXBuildFile; fileRef = 48A0CFD417A99F4900B819E5 /* .travis.yml */; };
 		48A0D03217A99F4A00B819E5 /* AFHTTPClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 48A0CFD717A99F4900B819E5 /* AFHTTPClient.m */; };
@@ -65,6 +59,11 @@
 		48BE753717AAEE0A00CD277F /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 48BE753617AAEE0A00CD277F /* Security.framework */; };
 		48BE753917AAEF2000CD277F /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 48BE753817AAEF2000CD277F /* MobileCoreServices.framework */; };
 		48BE753B17AAEF2700CD277F /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 48BE753A17AAEF2600CD277F /* SystemConfiguration.framework */; };
+		48BFE55D182059480038CFA7 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 48BFE55C182059480038CFA7 /* XCTest.framework */; };
+		48BFE55E182059480038CFA7 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 48A0CF9317A83C1900B819E5 /* Foundation.framework */; };
+		48BFE55F182059480038CFA7 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 48A0CF9117A83C1900B819E5 /* UIKit.framework */; };
+		48BFE565182059480038CFA7 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 48BFE563182059480038CFA7 /* InfoPlist.strings */; };
+		48BFE56F182061130038CFA7 /* VKAccessTokenTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 48BFE56E182061130038CFA7 /* VKAccessTokenTests.m */; };
 		48C5E24217B7A98800B088A1 /* ShariObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 48C5E24117B7A98800B088A1 /* ShariObject.m */; };
 		48CBDC0B1814041300241BF8 /* ShariMember.m in Sources */ = {isa = PBXBuildFile; fileRef = 48CBDC0A1814041300241BF8 /* ShariMember.m */; };
 		48CBDC1118146EAD00241BF8 /* DBEventDetailsVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 48CBDC1018146EAD00241BF8 /* DBEventDetailsVC.m */; };
@@ -73,7 +72,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		48A0CFBC17A83C1A00B819E5 /* PBXContainerItemProxy */ = {
+		48BFE569182059480038CFA7 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 48A0CF8617A83C1900B819E5 /* Project object */;
 			proxyType = 1;
@@ -120,14 +119,7 @@
 		48A0CFA317A83C1A00B819E5 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		48A0CFA517A83C1A00B819E5 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		48A0CFA717A83C1A00B819E5 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
-		48A0CFB717A83C1A00B819E5 /* Sharinator-iPhoneTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Sharinator-iPhoneTests.octest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		48A0CFB817A83C1A00B819E5 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
-		48A0CFC017A83C1A00B819E5 /* Sharinator-iPhoneTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Sharinator-iPhoneTests-Info.plist"; sourceTree = "<group>"; };
-		48A0CFC217A83C1A00B819E5 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		48A0CFC417A83C1A00B819E5 /* Sharinator_iPhoneTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Sharinator_iPhoneTests.h; sourceTree = "<group>"; };
-		48A0CFC517A83C1A00B819E5 /* Sharinator_iPhoneTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Sharinator_iPhoneTests.m; sourceTree = "<group>"; };
-		48A0CFCF17A846B800B819E5 /* DBvkLoginVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DBvkLoginVC.h; sourceTree = "<group>"; };
-		48A0CFD017A846B900B819E5 /* DBvkLoginVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DBvkLoginVC.m; sourceTree = "<group>"; };
 		48A0CFD317A99F4900B819E5 /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		48A0CFD417A99F4900B819E5 /* .travis.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .travis.yml; sourceTree = "<group>"; };
 		48A0CFD617A99F4900B819E5 /* AFHTTPClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPClient.h; sourceTree = "<group>"; };
@@ -170,6 +162,12 @@
 		48BE753617AAEE0A00CD277F /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		48BE753817AAEF2000CD277F /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		48BE753A17AAEF2600CD277F /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		48BFE55B182059480038CFA7 /* Sharinator-iPhone Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Sharinator-iPhone Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		48BFE55C182059480038CFA7 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		48BFE562182059480038CFA7 /* Sharinator-iPhone Tests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Sharinator-iPhone Tests-Info.plist"; sourceTree = "<group>"; };
+		48BFE564182059480038CFA7 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		48BFE568182059480038CFA7 /* Sharinator-iPhone Tests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Sharinator-iPhone Tests-Prefix.pch"; sourceTree = "<group>"; };
+		48BFE56E182061130038CFA7 /* VKAccessTokenTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VKAccessTokenTests.m; sourceTree = "<group>"; };
 		48C5E24017B7A98700B088A1 /* ShariObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShariObject.h; sourceTree = "<group>"; };
 		48C5E24117B7A98800B088A1 /* ShariObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShariObject.m; sourceTree = "<group>"; };
 		48CBDC091814041300241BF8 /* ShariMember.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShariMember.h; sourceTree = "<group>"; };
@@ -197,13 +195,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		48A0CFB317A83C1A00B819E5 /* Frameworks */ = {
+		48BFE558182059480038CFA7 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				48A0CFB917A83C1A00B819E5 /* SenTestingKit.framework in Frameworks */,
-				48A0CFBA17A83C1A00B819E5 /* UIKit.framework in Frameworks */,
-				48A0CFBB17A83C1A00B819E5 /* Foundation.framework in Frameworks */,
+				48BFE55D182059480038CFA7 /* XCTest.framework in Frameworks */,
+				48BFE55F182059480038CFA7 /* UIKit.framework in Frameworks */,
+				48BFE55E182059480038CFA7 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -215,7 +213,7 @@
 			children = (
 				48A0D07117A99F7400B819E5 /* 3rd Party */,
 				48A0CF9717A83C1A00B819E5 /* Sharinator-iPhone */,
-				48A0CFBE17A83C1A00B819E5 /* Sharinator-iPhoneTests */,
+				48BFE560182059480038CFA7 /* Sharinator-iPhone Tests */,
 				48A0CF9017A83C1900B819E5 /* Frameworks */,
 				48A0CF8F17A83C1900B819E5 /* Products */,
 			);
@@ -225,7 +223,7 @@
 			isa = PBXGroup;
 			children = (
 				48A0CF8E17A83C1900B819E5 /* Sharinator-iPhone.app */,
-				48A0CFB717A83C1A00B819E5 /* Sharinator-iPhoneTests.octest */,
+				48BFE55B182059480038CFA7 /* Sharinator-iPhone Tests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -241,6 +239,7 @@
 				48A0CF9317A83C1900B819E5 /* Foundation.framework */,
 				48A0CF9517A83C1900B819E5 /* CoreGraphics.framework */,
 				48A0CFB817A83C1A00B819E5 /* SenTestingKit.framework */,
+				48BFE55C182059480038CFA7 /* XCTest.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -256,8 +255,6 @@
 				48A0CFA117A83C1A00B819E5 /* DBAppDelegate.m */,
 				48A0CFA917A83C1A00B819E5 /* MainStoryboard_iPhone.storyboard */,
 				48A0CF9817A83C1A00B819E5 /* Supporting Files */,
-				48A0CFCF17A846B800B819E5 /* DBvkLoginVC.h */,
-				48A0CFD017A846B900B819E5 /* DBvkLoginVC.m */,
 				4833165417B040E000F43569 /* DBEventsVC.h */,
 				4833165517B040E000F43569 /* DBEventsVC.m */,
 				484262FE17B2ED4F00CFDA0F /* DBAddEventVC.h */,
@@ -296,25 +293,6 @@
 				481CBE2D1816FD3700762821 /* test.json */,
 				4858CF7E1817CB0E00862B33 /* ShariExpense.json */,
 				4858CF801817CB7200862B33 /* ShariSocial.json */,
-			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		48A0CFBE17A83C1A00B819E5 /* Sharinator-iPhoneTests */ = {
-			isa = PBXGroup;
-			children = (
-				48A0CFC417A83C1A00B819E5 /* Sharinator_iPhoneTests.h */,
-				48A0CFC517A83C1A00B819E5 /* Sharinator_iPhoneTests.m */,
-				48A0CFBF17A83C1A00B819E5 /* Supporting Files */,
-			);
-			path = "Sharinator-iPhoneTests";
-			sourceTree = "<group>";
-		};
-		48A0CFBF17A83C1A00B819E5 /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				48A0CFC017A83C1A00B819E5 /* Sharinator-iPhoneTests-Info.plist */,
-				48A0CFC117A83C1A00B819E5 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -409,6 +387,25 @@
 			name = VK;
 			sourceTree = "<group>";
 		};
+		48BFE560182059480038CFA7 /* Sharinator-iPhone Tests */ = {
+			isa = PBXGroup;
+			children = (
+				48BFE561182059480038CFA7 /* Supporting Files */,
+				48BFE56E182061130038CFA7 /* VKAccessTokenTests.m */,
+			);
+			path = "Sharinator-iPhone Tests";
+			sourceTree = "<group>";
+		};
+		48BFE561182059480038CFA7 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				48BFE562182059480038CFA7 /* Sharinator-iPhone Tests-Info.plist */,
+				48BFE563182059480038CFA7 /* InfoPlist.strings */,
+				48BFE568182059480038CFA7 /* Sharinator-iPhone Tests-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -429,24 +426,23 @@
 			productReference = 48A0CF8E17A83C1900B819E5 /* Sharinator-iPhone.app */;
 			productType = "com.apple.product-type.application";
 		};
-		48A0CFB617A83C1A00B819E5 /* Sharinator-iPhoneTests */ = {
+		48BFE55A182059480038CFA7 /* Sharinator-iPhone Tests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 48A0CFCC17A83C1A00B819E5 /* Build configuration list for PBXNativeTarget "Sharinator-iPhoneTests" */;
+			buildConfigurationList = 48BFE56B182059480038CFA7 /* Build configuration list for PBXNativeTarget "Sharinator-iPhone Tests" */;
 			buildPhases = (
-				48A0CFB217A83C1A00B819E5 /* Sources */,
-				48A0CFB317A83C1A00B819E5 /* Frameworks */,
-				48A0CFB417A83C1A00B819E5 /* Resources */,
-				48A0CFB517A83C1A00B819E5 /* ShellScript */,
+				48BFE557182059480038CFA7 /* Sources */,
+				48BFE558182059480038CFA7 /* Frameworks */,
+				48BFE559182059480038CFA7 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				48A0CFBD17A83C1A00B819E5 /* PBXTargetDependency */,
+				48BFE56A182059480038CFA7 /* PBXTargetDependency */,
 			);
-			name = "Sharinator-iPhoneTests";
-			productName = "Sharinator-iPhoneTests";
-			productReference = 48A0CFB717A83C1A00B819E5 /* Sharinator-iPhoneTests.octest */;
-			productType = "com.apple.product-type.bundle";
+			name = "Sharinator-iPhone Tests";
+			productName = "Sharinator-iPhone Tests";
+			productReference = 48BFE55B182059480038CFA7 /* Sharinator-iPhone Tests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
 
@@ -455,8 +451,13 @@
 			isa = PBXProject;
 			attributes = {
 				CLASSPREFIX = DB;
-				LastUpgradeCheck = 0460;
+				LastUpgradeCheck = 0500;
 				ORGANIZATIONNAME = "Dmitry Burmistrov";
+				TargetAttributes = {
+					48BFE55A182059480038CFA7 = {
+						TestTargetID = 48A0CF8D17A83C1900B819E5;
+					};
+				};
 			};
 			buildConfigurationList = 48A0CF8917A83C1900B819E5 /* Build configuration list for PBXProject "Sharinator-iPhone" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -472,7 +473,7 @@
 			projectRoot = "";
 			targets = (
 				48A0CF8D17A83C1900B819E5 /* Sharinator-iPhone */,
-				48A0CFB617A83C1A00B819E5 /* Sharinator-iPhoneTests */,
+				48BFE55A182059480038CFA7 /* Sharinator-iPhone Tests */,
 			);
 		};
 /* End PBXProject section */
@@ -506,31 +507,15 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		48A0CFB417A83C1A00B819E5 /* Resources */ = {
+		48BFE559182059480038CFA7 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				48A0CFC317A83C1A00B819E5 /* InfoPlist.strings in Resources */,
+				48BFE565182059480038CFA7 /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
-
-/* Begin PBXShellScriptBuildPhase section */
-		48A0CFB517A83C1A00B819E5 /* ShellScript */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
-		};
-/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		48A0CF8A17A83C1900B819E5 /* Sources */ = {
@@ -541,7 +526,6 @@
 				48A0CFA217A83C1A00B819E5 /* DBAppDelegate.m in Sources */,
 				481CBE311817066500762821 /* DBDocumentsManager.m in Sources */,
 				4858CF7D1817CA2100862B33 /* ShariExpense.m in Sources */,
-				48A0CFD117A846B900B819E5 /* DBvkLoginVC.m in Sources */,
 				48A0D03217A99F4A00B819E5 /* AFHTTPClient.m in Sources */,
 				48A0D03317A99F4A00B819E5 /* AFHTTPRequestOperation.m in Sources */,
 				48A0D03417A99F4A00B819E5 /* AFImageRequestOperation.m in Sources */,
@@ -570,21 +554,21 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		48A0CFB217A83C1A00B819E5 /* Sources */ = {
+		48BFE557182059480038CFA7 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				48A0CFC617A83C1A00B819E5 /* Sharinator_iPhoneTests.m in Sources */,
+				48BFE56F182061130038CFA7 /* VKAccessTokenTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		48A0CFBD17A83C1A00B819E5 /* PBXTargetDependency */ = {
+		48BFE56A182059480038CFA7 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 48A0CF8D17A83C1900B819E5 /* Sharinator-iPhone */;
-			targetProxy = 48A0CFBC17A83C1A00B819E5 /* PBXContainerItemProxy */;
+			targetProxy = 48BFE569182059480038CFA7 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -605,10 +589,10 @@
 			name = MainStoryboard_iPhone.storyboard;
 			sourceTree = "<group>";
 		};
-		48A0CFC117A83C1A00B819E5 /* InfoPlist.strings */ = {
+		48BFE563182059480038CFA7 /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
-				48A0CFC217A83C1A00B819E5 /* en */,
+				48BFE564182059480038CFA7 /* en */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
@@ -698,37 +682,60 @@
 			};
 			name = Release;
 		};
-		48A0CFCD17A83C1A00B819E5 /* Debug */ = {
+		48BFE56C182059480038CFA7 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Sharinator-iPhone.app/Sharinator-iPhone";
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				FRAMEWORK_SEARCH_PATHS = (
-					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
-					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "Sharinator-iPhone/Sharinator-iPhone-Prefix.pch";
-				INFOPLIST_FILE = "Sharinator-iPhoneTests/Sharinator-iPhoneTests-Info.plist";
+				GCC_PREFIX_HEADER = "Sharinator-iPhone Tests/Sharinator-iPhone Tests-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				INFOPLIST_FILE = "Sharinator-iPhone Tests/Sharinator-iPhone Tests-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUNDLE_LOADER)";
-				WRAPPER_EXTENSION = octest;
+				WRAPPER_EXTENSION = xctest;
 			};
 			name = Debug;
 		};
-		48A0CFCE17A83C1A00B819E5 /* Release */ = {
+		48BFE56D182059480038CFA7 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Sharinator-iPhone.app/Sharinator-iPhone";
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				ENABLE_NS_ASSERTIONS = NO;
 				FRAMEWORK_SEARCH_PATHS = (
-					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
-					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "Sharinator-iPhone/Sharinator-iPhone-Prefix.pch";
-				INFOPLIST_FILE = "Sharinator-iPhoneTests/Sharinator-iPhoneTests-Info.plist";
+				GCC_PREFIX_HEADER = "Sharinator-iPhone Tests/Sharinator-iPhone Tests-Prefix.pch";
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				INFOPLIST_FILE = "Sharinator-iPhone Tests/Sharinator-iPhone Tests-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUNDLE_LOADER)";
-				WRAPPER_EXTENSION = octest;
+				WRAPPER_EXTENSION = xctest;
 			};
 			name = Release;
 		};
@@ -753,11 +760,11 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		48A0CFCC17A83C1A00B819E5 /* Build configuration list for PBXNativeTarget "Sharinator-iPhoneTests" */ = {
+		48BFE56B182059480038CFA7 /* Build configuration list for PBXNativeTarget "Sharinator-iPhone Tests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				48A0CFCD17A83C1A00B819E5 /* Debug */,
-				48A0CFCE17A83C1A00B819E5 /* Release */,
+				48BFE56C182059480038CFA7 /* Debug */,
+				48BFE56D182059480038CFA7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

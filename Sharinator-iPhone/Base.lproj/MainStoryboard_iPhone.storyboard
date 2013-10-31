@@ -194,6 +194,8 @@
                         <rect key="frame" x="129" y="330" width="163" height="49"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <color key="tintColor" red="0.45882352939999999" green="0.14901960780000001" blue="0.14901960780000001" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="barTintColor" red="0.0" green="0.64313725490196072" blue="0.35686274509803922" alpha="1" colorSpace="calibratedRGB"/>
                     </tabBar>
                     <connections>
                         <segue destination="vSX-zq-iE5" kind="relationship" relationship="viewControllers" id="59x-0j-ifJ"/>
@@ -214,6 +216,8 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="oYJ-ki-p5u">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" red="0.45882352939999999" green="0.14901960780000001" blue="0.14901960780000001" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="barTintColor" red="0.89019607840000003" green="0.64313725489999995" blue="0.35686274509999999" alpha="1" colorSpace="calibratedRGB"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -266,6 +270,7 @@
                     </tableView>
                     <navigationItem key="navigationItem" title="Тусы" id="uJl-BI-S3h">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="jBn-uy-CG5">
+                            <color key="tintColor" red="0.45882352941176469" green="0.14901960784313725" blue="0.14901960784313725" alpha="1" colorSpace="calibratedRGB"/>
                             <connections>
                                 <segue destination="KIh-cg-v01" kind="modal" identifier="AddEvent" modalTransitionStyle="coverVertical" id="Cnn-Lx-ehl"/>
                             </connections>
@@ -396,9 +401,6 @@
                                         </label>
                                     </subviews>
                                 </tableViewCellContentView>
-                                <connections>
-                                    <segue destination="baz-RA-Svi" kind="push" identifier="ExpenseDetails" id="Zfo-Ld-rzX"/>
-                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -409,7 +411,7 @@
                     <navigationItem key="navigationItem" id="5ak-hT-Ons">
                         <nil key="title"/>
                         <segmentedControl key="titleView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" id="DW1-vD-Jlc">
-                            <rect key="frame" x="80" y="7" width="161" height="31"/>
+                            <rect key="frame" x="80" y="7" width="161" height="30"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <segments>
                                 <segment title="Участники"/>
@@ -440,11 +442,12 @@
                     <connections>
                         <outlet property="visibleDataSegmentedControl" destination="DW1-vD-Jlc" id="Jkx-BX-gyz"/>
                         <segue destination="BPq-sK-oG6" kind="push" identifier="MemberDetails" id="Uyk-lY-BPU"/>
+                        <segue destination="baz-RA-Svi" kind="push" identifier="ExpenseDetails" id="FmX-h3-zlm"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0mq-pq-aom" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="820" y="-655"/>
+            <point key="canvasLocation" x="892" y="-557"/>
         </scene>
         <!--Expense DetailsVC-->
         <scene sceneID="4om-nP-m7T">
@@ -484,8 +487,8 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="=> 3500 руб." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Zw-Km-W2M">
-                                <rect key="frame" x="184" y="77" width="116" height="21"/>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="3500" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Zw-Km-W2M">
+                                <rect key="frame" x="124" y="77" width="99" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="highlightedColor"/>
@@ -502,23 +505,27 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="руб." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G8x-UG-g1I">
+                                <rect key="frame" x="229" y="77" width="40" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="qUn-FT-d6S">
-                        <barButtonItem key="rightBarButtonItem" title="Item" style="plain" id="lkH-25-XQf">
+                        <barButtonItem key="rightBarButtonItem" title="Item" id="lkH-25-XQf">
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="infoLight" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" id="3nJ-gT-v25">
                                 <rect key="frame" x="282" y="11" width="22" height="22"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                <state key="normal">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
                             </button>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="payer" destination="4v4-VE-bfe" id="6Ye-v8-hHO"/>
+                        <outlet property="currencyLabel" destination="G8x-UG-g1I" id="UqG-tc-Fvf"/>
+                        <outlet property="payerLabel" destination="4v4-VE-bfe" id="EVM-Ee-emV"/>
+                        <outlet property="priceLabel" destination="6Zw-Km-W2M" id="VVk-9M-03a"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zfa-bq-fX5" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -561,7 +568,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vCz-mB-3FQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1435" y="-655"/>
+            <point key="canvasLocation" x="1555" y="-655"/>
         </scene>
         <!--Add EventVC - Add Event-->
         <scene sceneID="UVF-Fe-2xd">
