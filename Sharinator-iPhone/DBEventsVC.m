@@ -9,7 +9,7 @@
 #import "DBEventsVC.h"
 #import "ShariEvent.h"
 #import "VKAccessManager.h"
-#import "DBEventDetailsVC.h"
+#import "DBEventVC.h"
 
 @interface DBEventsVC ()
 
@@ -114,7 +114,7 @@
     }
     
     if ([segue.identifier isEqual:@"EventDetails"]) {
-        DBEventDetailsVC *eventDetailsVC = segue.destinationViewController;
+        DBEventVC *eventDetailsVC = segue.destinationViewController;
         ShariEvent *event = (self.events)[[self.tableView indexPathForSelectedRow].row];
         eventDetailsVC.event = event;
         return;

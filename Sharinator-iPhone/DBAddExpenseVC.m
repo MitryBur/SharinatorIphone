@@ -1,18 +1,19 @@
 //
-//  DBAddEventVC.m
+//  DBAddExpenseVC.m
 //  Sharinator-iPhone
 //
-//  Created by Dmitry Burmistrov on 8/8/13.
-//  Copyright (c) 2013 Dmitry Burmistrov. All rights reserved.
+//  Created by Dmitry Burmistrov on 10/01/14.
+//  Copyright (c) 2014 Dmitry Burmistrov. All rights reserved.
 //
 
-#import "DBAddEventVC.h"
+#import "DBAddExpenseVC.h"
+#import "ShariEvent.h"
 
-@interface DBAddEventVC ()
+@interface DBAddExpenseVC ()
 
 @end
 
-@implementation DBAddEventVC
+@implementation DBAddExpenseVC
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -26,12 +27,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
- 
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    
     UITapGestureRecognizer *gestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(hideKeyboard)];
     gestureRecognizer.cancelsTouchesInView = NO;
     [self.tableView addGestureRecognizer:gestureRecognizer];
@@ -46,21 +42,17 @@
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     NSLog(@"%@", segue.identifier);
-    //if ([segue.identifier isEqual: @"AddMembersToEvent"]) {
-    DBAddMembersVC *addMembersVC = segue.destinationViewController;
-    addMembersVC.delegate = self;
-    //}
+    if ([segue.identifier isEqual: @"AddMembers"]) {
+        DBAddMembersVC *addMembersVC = segue.destinationViewController;
+        addMembersVC.delegate = self;
+    }
 }
 
-- (IBAction)done:(id)sender{
+- (IBAction)save:(id)sender{
     ShariEvent *event = [[ShariEvent alloc] init];
     event.title = self.titleTextField.text;
     event.description = self.descriptionTextView.text;
-    [self.delegate addEventVCDidSave:self event:event];
-}
-
-- (IBAction)cancel:(id)sender{
-    [self.delegate addEventVCDidCancel:self];
+    //[self.delegate addEventVCDidSave:self event:event];
 }
 
 - (IBAction)textFieldReturn:(id)sender{
@@ -72,9 +64,9 @@
 }
 - (void)hideKeyboard{
     [self.titleTextField resignFirstResponder];
+    [self.priceTextField resignFirstResponder];
     [self.descriptionTextView resignFirstResponder];
 }
-
 
 #pragma mark - Table view data source
 

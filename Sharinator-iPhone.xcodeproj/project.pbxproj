@@ -19,10 +19,11 @@
 		481CBE311817066500762821 /* DBDocumentsManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 481CBE301817066500762821 /* DBDocumentsManager.m */; };
 		4833165617B040E000F43569 /* DBEventsVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 4833165517B040E000F43569 /* DBEventsVC.m */; };
 		4842630017B2ED4F00CFDA0F /* DBAddEventVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 484262FF17B2ED4F00CFDA0F /* DBAddEventVC.m */; };
-		4842630417B432C800CFDA0F /* DBAddMembersToEventVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 4842630317B432C800CFDA0F /* DBAddMembersToEventVC.m */; };
+		4842630417B432C800CFDA0F /* DBAddMembersVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 4842630317B432C800CFDA0F /* DBAddMembersVC.m */; };
 		4858CF7D1817CA2100862B33 /* ShariExpense.m in Sources */ = {isa = PBXBuildFile; fileRef = 4858CF7C1817CA2100862B33 /* ShariExpense.m */; };
 		4858CF7F1817CB0E00862B33 /* ShariExpense.json in Resources */ = {isa = PBXBuildFile; fileRef = 4858CF7E1817CB0E00862B33 /* ShariExpense.json */; };
 		4858CF811817CB7200862B33 /* ShariSocial.json in Resources */ = {isa = PBXBuildFile; fileRef = 4858CF801817CB7200862B33 /* ShariSocial.json */; };
+		489E3CEE187F71A30067AF39 /* DBAddExpenseVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 489E3CED187F71A30067AF39 /* DBAddExpenseVC.m */; };
 		48A0CF9217A83C1900B819E5 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 48A0CF9117A83C1900B819E5 /* UIKit.framework */; };
 		48A0CF9417A83C1900B819E5 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 48A0CF9317A83C1900B819E5 /* Foundation.framework */; };
 		48A0CF9617A83C1900B819E5 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 48A0CF9517A83C1900B819E5 /* CoreGraphics.framework */; };
@@ -66,7 +67,7 @@
 		48BFE56F182061130038CFA7 /* VKAccessTokenTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 48BFE56E182061130038CFA7 /* VKAccessTokenTests.m */; };
 		48C5E24217B7A98800B088A1 /* ShariObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 48C5E24117B7A98800B088A1 /* ShariObject.m */; };
 		48CBDC0B1814041300241BF8 /* ShariMember.m in Sources */ = {isa = PBXBuildFile; fileRef = 48CBDC0A1814041300241BF8 /* ShariMember.m */; };
-		48CBDC1118146EAD00241BF8 /* DBEventDetailsVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 48CBDC1018146EAD00241BF8 /* DBEventDetailsVC.m */; };
+		48CBDC1118146EAD00241BF8 /* DBEventVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 48CBDC1018146EAD00241BF8 /* DBEventVC.m */; };
 		48CBDC141814713500241BF8 /* DBEventInformationVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 48CBDC131814713500241BF8 /* DBEventInformationVC.m */; };
 		48DF5BE317B1A36200D11E0C /* ShariEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = 48DF5BE217B1A36200D11E0C /* ShariEvent.m */; };
 /* End PBXBuildFile section */
@@ -100,12 +101,14 @@
 		4833165517B040E000F43569 /* DBEventsVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DBEventsVC.m; sourceTree = "<group>"; };
 		484262FE17B2ED4F00CFDA0F /* DBAddEventVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DBAddEventVC.h; sourceTree = "<group>"; };
 		484262FF17B2ED4F00CFDA0F /* DBAddEventVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DBAddEventVC.m; sourceTree = "<group>"; };
-		4842630217B432C800CFDA0F /* DBAddMembersToEventVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DBAddMembersToEventVC.h; sourceTree = "<group>"; };
-		4842630317B432C800CFDA0F /* DBAddMembersToEventVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DBAddMembersToEventVC.m; sourceTree = "<group>"; };
+		4842630217B432C800CFDA0F /* DBAddMembersVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DBAddMembersVC.h; sourceTree = "<group>"; };
+		4842630317B432C800CFDA0F /* DBAddMembersVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DBAddMembersVC.m; sourceTree = "<group>"; };
 		4858CF7B1817CA2100862B33 /* ShariExpense.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShariExpense.h; sourceTree = "<group>"; };
 		4858CF7C1817CA2100862B33 /* ShariExpense.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShariExpense.m; sourceTree = "<group>"; };
 		4858CF7E1817CB0E00862B33 /* ShariExpense.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = ShariExpense.json; sourceTree = "<group>"; };
 		4858CF801817CB7200862B33 /* ShariSocial.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = ShariSocial.json; sourceTree = "<group>"; };
+		489E3CEC187F71A30067AF39 /* DBAddExpenseVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DBAddExpenseVC.h; sourceTree = "<group>"; };
+		489E3CED187F71A30067AF39 /* DBAddExpenseVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DBAddExpenseVC.m; sourceTree = "<group>"; };
 		48A0CF8E17A83C1900B819E5 /* Sharinator-iPhone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Sharinator-iPhone.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		48A0CF9117A83C1900B819E5 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		48A0CF9317A83C1900B819E5 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -172,8 +175,8 @@
 		48C5E24117B7A98800B088A1 /* ShariObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShariObject.m; sourceTree = "<group>"; };
 		48CBDC091814041300241BF8 /* ShariMember.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShariMember.h; sourceTree = "<group>"; };
 		48CBDC0A1814041300241BF8 /* ShariMember.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShariMember.m; sourceTree = "<group>"; };
-		48CBDC0F18146EAD00241BF8 /* DBEventDetailsVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DBEventDetailsVC.h; sourceTree = "<group>"; };
-		48CBDC1018146EAD00241BF8 /* DBEventDetailsVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DBEventDetailsVC.m; sourceTree = "<group>"; };
+		48CBDC0F18146EAD00241BF8 /* DBEventVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DBEventVC.h; sourceTree = "<group>"; };
+		48CBDC1018146EAD00241BF8 /* DBEventVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DBEventVC.m; sourceTree = "<group>"; };
 		48CBDC121814713500241BF8 /* DBEventInformationVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DBEventInformationVC.h; sourceTree = "<group>"; };
 		48CBDC131814713500241BF8 /* DBEventInformationVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DBEventInformationVC.m; sourceTree = "<group>"; };
 		48DF5BE117B1A36200D11E0C /* ShariEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShariEvent.h; sourceTree = "<group>"; };
@@ -208,6 +211,80 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		485F071C188F04C8003F37B0 /* Events */ = {
+			isa = PBXGroup;
+			children = (
+				4833165417B040E000F43569 /* DBEventsVC.h */,
+				4833165517B040E000F43569 /* DBEventsVC.m */,
+				484262FE17B2ED4F00CFDA0F /* DBAddEventVC.h */,
+				484262FF17B2ED4F00CFDA0F /* DBAddEventVC.m */,
+				48CBDC0F18146EAD00241BF8 /* DBEventVC.h */,
+				48CBDC1018146EAD00241BF8 /* DBEventVC.m */,
+				48CBDC121814713500241BF8 /* DBEventInformationVC.h */,
+				48CBDC131814713500241BF8 /* DBEventInformationVC.m */,
+			);
+			name = Events;
+			sourceTree = "<group>";
+		};
+		485F071D188F050E003F37B0 /* Expenses */ = {
+			isa = PBXGroup;
+			children = (
+				4800F2351819D05600784F09 /* DBExpenseDetailsVC.h */,
+				4800F2361819D05600784F09 /* DBExpenseDetailsVC.m */,
+				4800F2321819CE6600784F09 /* DBExpenseMembersVC.h */,
+				4800F2331819CE6600784F09 /* DBExpenseMembersVC.m */,
+				489E3CEC187F71A30067AF39 /* DBAddExpenseVC.h */,
+				489E3CED187F71A30067AF39 /* DBAddExpenseVC.m */,
+			);
+			name = Expenses;
+			sourceTree = "<group>";
+		};
+		485F071E188F08EE003F37B0 /* Members */ = {
+			isa = PBXGroup;
+			children = (
+				4800F2221817EEE200784F09 /* DBMemberDetailsVC.h */,
+				4800F2231817EEE200784F09 /* DBMemberDetailsVC.m */,
+				4842630217B432C800CFDA0F /* DBAddMembersVC.h */,
+				4842630317B432C800CFDA0F /* DBAddMembersVC.m */,
+			);
+			name = Members;
+			sourceTree = "<group>";
+		};
+		485F071F188F08FD003F37B0 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				485F071C188F04C8003F37B0 /* Events */,
+				485F071D188F050E003F37B0 /* Expenses */,
+				485F071E188F08EE003F37B0 /* Members */,
+			);
+			name = "View Controllers";
+			sourceTree = "<group>";
+		};
+		485F0720188F0934003F37B0 /* Graphics */ = {
+			isa = PBXGroup;
+			children = (
+				4800F22B18187AA200784F09 /* group-50@2x.png */,
+				4800F2271818793D00784F09 /* moderator-50@2x.png */,
+				4800F2291818796D00784F09 /* credit_card-50@2x.png */,
+				4800F2251818754100784F09 /* temp_account.jpg */,
+				4800F22D1819287D00784F09 /* temp_party.jpg */,
+				48A0CFA317A83C1A00B819E5 /* Default.png */,
+				48A0CFA517A83C1A00B819E5 /* Default@2x.png */,
+				48A0CFA717A83C1A00B819E5 /* Default-568h@2x.png */,
+			);
+			name = Graphics;
+			sourceTree = "<group>";
+		};
+		485F0721188F094E003F37B0 /* JSON */ = {
+			isa = PBXGroup;
+			children = (
+				481CBE2D1816FD3700762821 /* test.json */,
+				4858CF7E1817CB0E00862B33 /* ShariExpense.json */,
+				4858CF801817CB7200862B33 /* ShariSocial.json */,
+			);
+			name = JSON;
+			sourceTree = "<group>";
+		};
 		48A0CF8517A83C1900B819E5 = {
 			isa = PBXGroup;
 			children = (
@@ -255,22 +332,7 @@
 				48A0CFA117A83C1A00B819E5 /* DBAppDelegate.m */,
 				48A0CFA917A83C1A00B819E5 /* MainStoryboard_iPhone.storyboard */,
 				48A0CF9817A83C1A00B819E5 /* Supporting Files */,
-				4833165417B040E000F43569 /* DBEventsVC.h */,
-				4833165517B040E000F43569 /* DBEventsVC.m */,
-				484262FE17B2ED4F00CFDA0F /* DBAddEventVC.h */,
-				484262FF17B2ED4F00CFDA0F /* DBAddEventVC.m */,
-				4842630217B432C800CFDA0F /* DBAddMembersToEventVC.h */,
-				4842630317B432C800CFDA0F /* DBAddMembersToEventVC.m */,
-				48CBDC0F18146EAD00241BF8 /* DBEventDetailsVC.h */,
-				48CBDC1018146EAD00241BF8 /* DBEventDetailsVC.m */,
-				48CBDC121814713500241BF8 /* DBEventInformationVC.h */,
-				48CBDC131814713500241BF8 /* DBEventInformationVC.m */,
-				4800F2221817EEE200784F09 /* DBMemberDetailsVC.h */,
-				4800F2231817EEE200784F09 /* DBMemberDetailsVC.m */,
-				4800F2351819D05600784F09 /* DBExpenseDetailsVC.h */,
-				4800F2361819D05600784F09 /* DBExpenseDetailsVC.m */,
-				4800F2321819CE6600784F09 /* DBExpenseMembersVC.h */,
-				4800F2331819CE6600784F09 /* DBExpenseMembersVC.m */,
+				485F071F188F08FD003F37B0 /* View Controllers */,
 			);
 			path = "Sharinator-iPhone";
 			sourceTree = "<group>";
@@ -278,21 +340,12 @@
 		48A0CF9817A83C1A00B819E5 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				4800F22B18187AA200784F09 /* group-50@2x.png */,
-				4800F2271818793D00784F09 /* moderator-50@2x.png */,
-				4800F2291818796D00784F09 /* credit_card-50@2x.png */,
-				4800F2251818754100784F09 /* temp_account.jpg */,
-				4800F22D1819287D00784F09 /* temp_party.jpg */,
+				485F0721188F094E003F37B0 /* JSON */,
+				485F0720188F0934003F37B0 /* Graphics */,
 				48A0CF9917A83C1A00B819E5 /* Sharinator-iPhone-Info.plist */,
 				48A0CF9A17A83C1A00B819E5 /* InfoPlist.strings */,
 				48A0CF9D17A83C1A00B819E5 /* main.m */,
 				48A0CF9F17A83C1A00B819E5 /* Sharinator-iPhone-Prefix.pch */,
-				48A0CFA317A83C1A00B819E5 /* Default.png */,
-				48A0CFA517A83C1A00B819E5 /* Default@2x.png */,
-				48A0CFA717A83C1A00B819E5 /* Default-568h@2x.png */,
-				481CBE2D1816FD3700762821 /* test.json */,
-				4858CF7E1817CB0E00862B33 /* ShariExpense.json */,
-				4858CF801817CB7200862B33 /* ShariSocial.json */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -546,9 +599,10 @@
 				4800F2341819CE6600784F09 /* DBExpenseMembersVC.m in Sources */,
 				48DF5BE317B1A36200D11E0C /* ShariEvent.m in Sources */,
 				4842630017B2ED4F00CFDA0F /* DBAddEventVC.m in Sources */,
-				48CBDC1118146EAD00241BF8 /* DBEventDetailsVC.m in Sources */,
+				48CBDC1118146EAD00241BF8 /* DBEventVC.m in Sources */,
 				48CBDC141814713500241BF8 /* DBEventInformationVC.m in Sources */,
-				4842630417B432C800CFDA0F /* DBAddMembersToEventVC.m in Sources */,
+				4842630417B432C800CFDA0F /* DBAddMembersVC.m in Sources */,
+				489E3CEE187F71A30067AF39 /* DBAddExpenseVC.m in Sources */,
 				48C5E24217B7A98800B088A1 /* ShariObject.m in Sources */,
 				48CBDC0B1814041300241BF8 /* ShariMember.m in Sources */,
 			);

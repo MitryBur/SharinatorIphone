@@ -1,23 +1,23 @@
 //
-//  DBEventDetailsVC.m
+//  DBEventVC.m
 //  Sharinator-iPhone
 //
 //  Created by Dmitry Burmistrov on 8/14/13.
 //  Copyright (c) 2013 Dmitry Burmistrov. All rights reserved.
 //
 
-#import "DBEventDetailsVC.h"
+#import "DBEventVC.h"
 #import "DBMemberDetailsVC.h"
 #import "DBEventInformationVC.h"
 #import "DBExpenseDetailsVC.h"
 #import "ShariExpense.h"
 #import "ShariSocial.h"
 
-@interface DBEventDetailsVC ()
+@interface DBEventVC ()
 
 @end
 
-@implementation DBEventDetailsVC
+@implementation DBEventVC
 {
     NSArray *members;
     NSArray *expenses;

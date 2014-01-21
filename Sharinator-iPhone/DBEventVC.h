@@ -1,5 +1,5 @@
 //
-//  DBEventDetailsVC.h
+//  DBEventVC.h
 //  Sharinator-iPhone
 //
 //  Created by Dmitry Burmistrov on 8/14/13.
@@ -11,7 +11,7 @@
 #import "ShariEvent.h"
 #import "ShariClient.h"
 
-@interface DBEventDetailsVC : UITableViewController <ShariClientDelegate>
+@interface DBEventVC : UITableViewController <ShariClientDelegate>
 @property (weak, nonatomic) IBOutlet UISegmentedControl *visibleDataSegmentedControl;
 @property (strong, nonatomic) ShariEvent *event;
 

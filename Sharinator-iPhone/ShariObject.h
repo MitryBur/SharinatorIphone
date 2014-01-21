@@ -11,4 +11,5 @@
 @interface ShariObject : NSObject
 - (instancetype)initWithRawDictionary:(NSDictionary *)dictionary;
 - (NSDictionary *)dictionaryRepresentation;
+- (id)processJSONString:(NSString *)string;
 @end

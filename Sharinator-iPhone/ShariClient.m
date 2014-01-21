@@ -140,8 +140,6 @@ static NSString * const kSharinatorAPIBaseURLString = @"http://shariserver.herok
     {
         NSMutableArray *objects = [[NSMutableArray alloc] init];
         for (NSDictionary *d in responseObject) {
-            NSLog(@"aaa %@", d);
-
             id object = [[class alloc] initWithRawDictionary:d];
             [objects addObject:object];
         }
@@ -173,8 +171,4 @@ static NSString * const kSharinatorAPIBaseURLString = @"http://shariserver.herok
                   [self.delegate shariClient:self didFailWithError:error];
           }];
 }
-
-
-
-
 @end

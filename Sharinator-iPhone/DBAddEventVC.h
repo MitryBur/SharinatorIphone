@@ -8,12 +8,12 @@
 
 @import UIKit;
 #import "ShariEvent.h"
-#import "DBAddMembersToEventVC.h"
+#import "DBAddMembersVC.h"
 
 
 @protocol DBAddEventVCDelegate;
 
-@interface DBAddEventVC : UITableViewController <DBAddMembersToEventVCDelegate>
+@interface DBAddEventVC : UITableViewController <DBAddMembersVCDelegate>
 @property (nonatomic, weak) id<DBAddEventVCDelegate> delegate;
 @property (weak, nonatomic) IBOutlet UITextField *titleTextField;
 @property (weak, nonatomic) IBOutlet UITextView *descriptionTextView;

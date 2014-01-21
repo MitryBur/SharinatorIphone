@@ -15,14 +15,14 @@
         self.description = dictionary[@"description"];
         self.currency = dictionary[@"currency"];
         self.price = [NSNumber numberWithFloat:[dictionary[@"price"] floatValue]];
-        self.payerID = [dictionary[@"payer_id"] integerValue];
+        self.payer = [[ShariSocial alloc] processJSONString:dictionary[@"payer"]];
         self.members = dictionary[@"members"];
     }
     return self;
 }
 
 - (NSDictionary *)dictionaryRepresentation{
-    return @{@"title": self.title,@"description": self.description, @"currency":self.currency, @"price": self.price, @"payer_id":@(self.payerID), @"members":self.members};
+    return @{@"title": self.title,@"description": self.description, @"currency":self.currency, @"price": self.price, @"payer":self.payer, @"members":self.members};
 }
 
 + (NSString *)requestPath{
