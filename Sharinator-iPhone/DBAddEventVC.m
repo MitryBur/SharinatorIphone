@@ -7,12 +7,16 @@
 //
 
 #import "DBAddEventVC.h"
+#import "ShariSocialProfile.h"
 
 @interface DBAddEventVC ()
 
 @end
 
 @implementation DBAddEventVC
+{
+    NSArray *eventMembers;
+}
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -56,6 +60,7 @@
     ShariEvent *event = [[ShariEvent alloc] init];
     event.title = self.titleTextField.text;
     event.description = self.descriptionTextView.text;
+    event.members = eventMembers;
     [self.delegate addEventVCDidSave:self event:event];
 }
 
@@ -89,9 +94,10 @@
 #pragma mark - DBAddMembersToEventVCDelegate
 - (void)membersAdded:(NSArray *)members{
     NSLog(@"Member IDs");
-    for (NSNumber *member in members){
-        NSLog(@"%d", [member integerValue]);
-    }
+    /*for (ShariSocialProfile *member in members){
+        NSLog(@"%d", member.vkID);
+    }*/
+    eventMembers = members;
 }
 
 @end

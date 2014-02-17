@@ -11,7 +11,7 @@
 #import "DBEventInformationVC.h"
 #import "DBExpenseDetailsVC.h"
 #import "ShariExpense.h"
-#import "ShariSocial.h"
+#import "ShariSocialProfile.h"
 
 @interface DBEventVC ()
 
@@ -37,16 +37,11 @@
     [super viewDidLoad];
     
     self.title = self.event.title;
-    
-    ShariClient *client = [ShariClient sharedInstance];
+    members = self.event.members;
+    /*ShariClient *client = [ShariClient sharedInstance];
     client.delegate = self;
-    [client getLocally:[ShariSocial class]];
-
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
- 
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    [client get:[ShariSocialProfile class]];
+    */
 }
 
 - (void)didReceiveMemoryWarning
@@ -84,12 +79,12 @@
 {
     static NSString *CellIdentifier = @"Cell";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
-	ShariSocial *member = nil;
+	ShariUser *member = nil;
     ShariExpense *expense = nil;
     switch (self.visibleDataSegmentedControl.selectedSegmentIndex) {
         case 0:
             member = members[indexPath.row];
-            cell.textLabel.text = member.name;
+            cell.textLabel.text = member.social.name;
             cell.detailTextLabel.text = @"";
             break;
         case 1:
@@ -192,7 +187,7 @@
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
     if ([segue.identifier isEqualToString:@"MemberDetails"]) {
         DBMemberDetailsVC *memberDetailsVC = segue.destinationViewController;
-        memberDetailsVC.title = ((ShariSocial *)members[[self.tableView indexPathForSelectedRow].row]).name;
+        memberDetailsVC.title = ((ShariSocialProfile *)members[[self.tableView indexPathForSelectedRow].row]).name;
     }
     else if ([segue.identifier isEqualToString:@"EventInfo"]){
         DBEventInformationVC *eventInfoVC = segue.destinationViewController;

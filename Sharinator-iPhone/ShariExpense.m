@@ -15,7 +15,7 @@
         self.description = dictionary[@"description"];
         self.currency = dictionary[@"currency"];
         self.price = [NSNumber numberWithFloat:[dictionary[@"price"] floatValue]];
-        self.payer = [[ShariSocial alloc] processJSONString:dictionary[@"payer"]];
+        self.payer = [ShariSocialProfile processJSONString:dictionary[@"payer"]];
         self.members = dictionary[@"members"];
     }
     return self;

@@ -1,18 +1,18 @@
 //
-//  DBAddMembersVC.m
+//  DBSelectEventVC.m
 //  Sharinator-iPhone
 //
 //  Created by Dmitry Burmistrov on 8/9/13.
 //  Copyright (c) 2013 Dmitry Burmistrov. All rights reserved.
 //
 
-#import "DBAddMembersVC.h"
+#import "DBSelectEventVC.h"
 #import "ShariSocialProfile.h"
-#import "ShariUser.h"
 
-@implementation DBAddMembersVC{
-    NSMutableArray *members;
-    NSArray *vkFriends;
+
+@implementation DBSelectEventVC{
+    NSIndexPath *selectedEventIndexPath;
+    NSArray *events;
 }
 
 - (id)initWithStyle:(UITableViewStyle)style
@@ -34,16 +34,8 @@
     [refreshControl addTarget:self action:@selector(reloadDataFromWeb) forControlEvents:UIControlEventValueChanged];
     self.refreshControl = refreshControl;
     
-    
-    //Temp
-    UISwipeGestureRecognizer *recognizer = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(swiped:)];
-    recognizer.direction = UISwipeGestureRecognizerDirectionLeft;
-    [self.tableView addGestureRecognizer:recognizer];
-    
     ShariClient *client = [ShariClient sharedInstance];
     client.delegate = self;
-    
-    members = [[NSMutableArray alloc] init];
     
     [self reloadDataFromWeb];
 }
@@ -51,29 +43,14 @@
     [super viewWillAppear:animated];
 }
 
--(void)swiped:(UIGestureRecognizer *)recognizer{
-    CGPoint point = [recognizer locationInView:self.tableView];
-    NSIndexPath *index = [self.tableView indexPathForRowAtPoint:point];
-    UITableViewCell *cell = [self.tableView cellForRowAtIndexPath:index];
-    cell.textLabel.text = @"Perfect";
-    
-    CGSize size = [cell.textLabel.text sizeWithFont:cell.textLabel.font];
-    CGFloat y = cell.contentView.frame.size.height/2;
-    UIView *line = [[UIView alloc] initWithFrame:CGRectMake(15, y, size.width, 3)];
-    line.backgroundColor = [UIColor redColor];
-    [cell.contentView addSubview:line];
-    
-    
-    NSLog(@"Swiped");
-}
-
 - (void)viewWillDisappear:(BOOL)animated{
     [super viewWillDisappear:animated];
-    [self.delegate membersAdded:[members copy]];
+    ShariEvent *event = events[selectedEventIndexPath.row];
+    [self.delegate eventSelected:event];
 }
 
 -(void)reloadDataFromWeb{
-    [[ShariClient sharedInstance] getVKFriends];
+    [[ShariClient sharedInstance] get:[ShariEvent class]];
 }
 
 - (void)didReceiveMemoryWarning
@@ -93,22 +70,17 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     // Return the number of rows in the section.
-    return [vkFriends count];
+    return [events count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *CellIdentifier = @"Cell";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
-	ShariUser *friend = vkFriends[indexPath.row];
-    cell.textLabel.text = friend.social.name;
     
-    for (ShariUser *u in members) {
-        if (u.social.vkID == friend.social.vkID) {
-            cell.accessoryType = UITableViewCellAccessoryCheckmark;
-            break;
-        }
-    }
+	ShariEvent *event = (events)[indexPath.row];
+    cell.textLabel.text = event.title;
+    cell.detailTextLabel.text = event.description;
     
     return cell;
 }
@@ -118,24 +90,24 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
-    UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
-    cell.accessoryType = cell.accessoryType == UITableViewCellAccessoryCheckmark ? UITableViewCellAccessoryNone : UITableViewCellAccessoryCheckmark;
-    
-    ShariUser *friend = vkFriends[indexPath.row];
-    if (cell.accessoryType == UITableViewCellAccessoryCheckmark) {
-        ShariUser *user = friend;
-        [members addObject:user];
+    if (selectedEventIndexPath) {
+        UITableViewCell *previouslySelectedCell = [tableView cellForRowAtIndexPath:selectedEventIndexPath];
+        previouslySelectedCell.accessoryType = UITableViewCellAccessoryNone;
     }
-    else{
-        [members removeObjectIdenticalTo:friend];
+    if (![selectedEventIndexPath isEqual:indexPath]) {
+        UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
+        cell.accessoryType = UITableViewCellAccessoryCheckmark;
+        selectedEventIndexPath = indexPath;
+    }else{
+        selectedEventIndexPath = nil;
     }
 }
 
 #pragma mark - ShariClient delegate
 - (void)shariClient:(ShariClient *)client didGetWithResponse:(id)response{
-        vkFriends = response;
-        [self.tableView reloadData];
-        [self.refreshControl endRefreshing];
+    events = response;
+    [self.tableView reloadData];
+    [self.refreshControl endRefreshing];
 }
 
 - (void)shariClient:(ShariClient *)client didFailWithError:(NSError *)error{

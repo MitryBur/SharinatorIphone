@@ -8,12 +8,15 @@
 
 #import <Foundation/Foundation.h>
 #import "ShariObject.h"
+#import "ShariUser.h"
 
 @interface ShariEvent : ShariObject
 
 @property (nonatomic) NSString *title;
 @property (nonatomic) NSString *description;
+@property (nonatomic) NSString *imageURL;
+@property (nonatomic) ShariUser *owner;
+@property (nonatomic) NSArray *members;
 
-+ (NSString *)requestPath;
 
 @end

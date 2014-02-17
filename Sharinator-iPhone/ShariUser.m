@@ -7,8 +7,35 @@
 //
 
 #import "ShariUser.h"
-#import "ShariSocial.h"
+#import "ShariSocialProfile.h"
 
 @implementation ShariUser
+- (instancetype)initWithRawDictionary:(NSDictionary *)dictionary{
+    if ((self = [self init])) {
+        self.id = [dictionary[@"id"] integerValue];
+        self.social = [[ShariSocialProfile alloc] initWithRawDictionary:dictionary[@"social_profile"]];
+        self.social.user = self;
+    }
+    return self;
+}
 
+- (NSDictionary *)dictionaryRepresentation{
+    NSMutableArray *objects = [[NSMutableArray alloc] init];
+    NSMutableArray *keys = [[NSMutableArray alloc] init];
+    
+    if (self.id) {
+        [objects addObject:@(self.id)];
+        [keys addObject:@"id"];
+    }
+
+    if (self.social) {
+        [keys addObject:@"social_profile_attributes"];
+        [objects addObject:[self.social dictionaryRepresentation]];
+    }
+    NSDictionary *parameters = [[NSDictionary alloc] initWithObjects:objects forKeys:keys];
+    return [[NSDictionary alloc] initWithObjectsAndKeys:parameters, @"user", nil];
+}
++ (NSString *)requestPath{
+    return @"users.json";
+}
 @end

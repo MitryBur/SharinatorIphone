@@ -45,6 +45,9 @@
     if ([segue.identifier isEqual: @"AddMembers"]) {
         DBAddMembersVC *addMembersVC = segue.destinationViewController;
         addMembersVC.delegate = self;
+    }else if ([segue.identifier isEqual: @"SelectEvent"]) {
+        DBSelectEventVC *selectEventVC = segue.destinationViewController;
+        selectEventVC.delegate = self;
     }
 }
 
@@ -84,6 +87,11 @@
     for (NSNumber *member in members){
         NSLog(@"%d", [member integerValue]);
     }
+}
+
+#pragma mark - DBSelectEventVCDelegate
+- (void)eventSelected:(ShariEvent *)event{
+    NSLog(@"Event title is %@", event.title);
 }
 
 @end

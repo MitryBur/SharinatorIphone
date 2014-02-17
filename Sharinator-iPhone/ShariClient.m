@@ -10,13 +10,14 @@
 #import "AFJSONRequestOperation.h"
 #import "VKAccessManager.h"
 #import "ShariEvent.h"
-#import "ShariSocial.h"
+#import "ShariUser.h"
+#import "ShariSocialProfile.h"
 
 #import "DBDocumentsManager.h"
 
 
-static NSString * const kSharinatorAPIBaseURLString = @"http://shariserver.herokuapp.com/v1/";
-//static NSString * const kSharinatorAPIBaseURLString = @"http://localhost:3333/v1/";
+//static NSString * const kSharinatorAPIBaseURLString = @"http://shariserver.herokuapp.com/v1/";
+static NSString * const kSharinatorAPIBaseURLString = @"http://localhost:3333/v1/";
 
 @implementation ShariClient
 + (ShariClient *) sharedInstance
@@ -81,8 +82,10 @@ static NSString * const kSharinatorAPIBaseURLString = @"http://shariserver.herok
               {
                   NSMutableArray *objects = [[NSMutableArray alloc] init];
                   for (NSDictionary *d in responseObject[@"response"]) {
-                      id object = [[ShariSocial alloc] initWithRawDictionary:d];
-                      [objects addObject:object];
+                      id socialProfile = [[ShariSocialProfile alloc] initWithVKDictionary:d];
+                      ShariUser *user = [[ShariUser alloc] init];
+                      user.social = socialProfile;
+                      [objects addObject:user];
                   }
                   [self.delegate shariClient:self didGetWithResponse:(NSArray *)objects];
               }

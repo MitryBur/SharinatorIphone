@@ -8,8 +8,9 @@
 
 @import UIKit;
 #import "DBAddMembersVC.h"
+#import "DBSelectEventVC.h"
 
-@interface DBAddExpenseVC : UITableViewController<DBAddMembersVCDelegate>
+@interface DBAddExpenseVC : UITableViewController<DBAddMembersVCDelegate, DBSelectEventVCDelegate>
 
 @property (weak, nonatomic) IBOutlet UITextField *titleTextField;
 @property (weak, nonatomic) IBOutlet UITextView *descriptionTextView;

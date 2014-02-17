@@ -59,7 +59,6 @@
     static NSString *CellIdentifier = @"Cell";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
     cell.textLabel.text = @"Надувная кукла";
-    // Configure the cell...
     
     return cell;
 }
@@ -72,6 +71,4 @@
         return @"Участвовал";
     }
 }
-
-
 @end

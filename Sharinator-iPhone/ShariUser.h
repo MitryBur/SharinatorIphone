@@ -9,9 +9,9 @@
 #import <Foundation/Foundation.h>
 #import "ShariObject.h"
 
-@class ShariSocial;
+@class ShariSocialProfile;
 
 @interface ShariUser : ShariObject
 @property (nonatomic, assign) NSInteger id;
-@property (nonatomic, strong) ShariSocial *social;
+@property (nonatomic, strong) ShariSocialProfile *social;
 @end
