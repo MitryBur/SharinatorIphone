@@ -8,9 +8,12 @@
 
 @import UIKit;
 #import "ShariExpense.h"
+
 @interface DBExpenseDetailsVC : UIViewController
+
 @property (weak, nonatomic) IBOutlet UILabel *payerLabel;
 @property (weak, nonatomic) IBOutlet UILabel *priceLabel;
 @property (weak, nonatomic) IBOutlet UILabel *currencyLabel;
 @property (nonatomic, strong) ShariExpense *expense;
+
 @end

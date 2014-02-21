@@ -8,6 +8,7 @@
 
 #import "DBAddExpenseVC.h"
 #import "ShariEvent.h"
+#import "DBAddPayersVC.h"
 
 @interface DBAddExpenseVC ()
 
@@ -42,20 +43,19 @@
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     NSLog(@"%@", segue.identifier);
-    if ([segue.identifier isEqual: @"AddMembers"]) {
-        DBAddMembersVC *addMembersVC = segue.destinationViewController;
-        addMembersVC.delegate = self;
+    if ([segue.identifier isEqual: @"AddPayers"]) {
+        DBAddPayersVC *addPayerVC = segue.destinationViewController;
+        addPayerVC.event = self.event;
+        self.expense = [[ShariExpense alloc] init];
+        self.expense.title = self.titleTextField.text;
+        self.expense.description = self.descriptionTextView.text;
+        self.expense.price = [NSNumber numberWithFloat:[self.priceTextField.text floatValue]];
+        self.expense.event = self.event;
+        addPayerVC.expense = self.expense;
     }else if ([segue.identifier isEqual: @"SelectEvent"]) {
         DBSelectEventVC *selectEventVC = segue.destinationViewController;
         selectEventVC.delegate = self;
     }
-}
-
-- (IBAction)save:(id)sender{
-    ShariEvent *event = [[ShariEvent alloc] init];
-    event.title = self.titleTextField.text;
-    event.description = self.descriptionTextView.text;
-    //[self.delegate addEventVCDidSave:self event:event];
 }
 
 - (IBAction)textFieldReturn:(id)sender{
@@ -81,17 +81,11 @@
         [self.titleTextField becomeFirstResponder];
     }
 }
-#pragma mark - DBAddMembersToEventVCDelegate
-- (void)membersAdded:(NSArray *)members{
-    NSLog(@"Member IDs");
-    for (NSNumber *member in members){
-        NSLog(@"%d", [member integerValue]);
-    }
-}
 
 #pragma mark - DBSelectEventVCDelegate
 - (void)eventSelected:(ShariEvent *)event{
     NSLog(@"Event title is %@", event.title);
+    self.event = event;
 }
 
 @end

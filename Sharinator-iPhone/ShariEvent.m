@@ -14,6 +14,7 @@
 - (instancetype)initWithRawDictionary:(NSDictionary *)dictionary{
     
     if ((self = [self init])) {
+        self.id = [dictionary[@"id"] integerValue];
         self.title = dictionary[@"title"];
         self.description = dictionary[@"description"];
         self.members = [ShariUser processJSONArray:dictionary[@"users"]];
@@ -35,7 +36,8 @@
         [keys addObject:@"users_attributes"];
         [objects addObject:[self processMembers]];
     }
-    return [[NSDictionary alloc] initWithObjects:objects forKeys:keys];
+    NSDictionary *parameters = [[NSDictionary alloc] initWithObjects:objects forKeys:keys];
+    return [[NSDictionary alloc] initWithObjectsAndKeys:parameters, @"event", nil];
 }
 
 + (NSString *)requestPath{

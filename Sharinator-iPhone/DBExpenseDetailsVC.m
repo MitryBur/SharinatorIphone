@@ -7,6 +7,7 @@
 //
 
 #import "DBExpenseDetailsVC.h"
+#import "ShariSocialProfile.h"
 
 @interface DBExpenseDetailsVC ()
 
@@ -28,7 +29,7 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
     self.title = self.expense.title;
-    self.payerLabel.text = [NSString stringWithFormat:@"%@", self.expense.payer.name];
+    self.payerLabel.text = [NSString stringWithFormat:@"%@", self.expense.payer.social.name];
     self.priceLabel.text = [self.expense.price stringValue];
     self.currencyLabel.text = self.expense.currency;
 }

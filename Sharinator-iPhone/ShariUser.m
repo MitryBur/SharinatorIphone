@@ -32,8 +32,7 @@
         [keys addObject:@"social_profile_attributes"];
         [objects addObject:[self.social dictionaryRepresentation]];
     }
-    NSDictionary *parameters = [[NSDictionary alloc] initWithObjects:objects forKeys:keys];
-    return [[NSDictionary alloc] initWithObjectsAndKeys:parameters, @"user", nil];
+    return [[NSDictionary alloc] initWithObjects:objects forKeys:keys];
 }
 + (NSString *)requestPath{
     return @"users.json";

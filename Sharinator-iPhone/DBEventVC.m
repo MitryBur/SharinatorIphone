@@ -187,7 +187,7 @@
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
     if ([segue.identifier isEqualToString:@"MemberDetails"]) {
         DBMemberDetailsVC *memberDetailsVC = segue.destinationViewController;
-        memberDetailsVC.title = ((ShariSocialProfile *)members[[self.tableView indexPathForSelectedRow].row]).name;
+        memberDetailsVC.title = ((ShariUser *)members[[self.tableView indexPathForSelectedRow].row]).social.name;
     }
     else if ([segue.identifier isEqualToString:@"EventInfo"]){
         DBEventInformationVC *eventInfoVC = segue.destinationViewController;

@@ -12,6 +12,7 @@
 
 @interface ShariEvent : ShariObject
 
+@property (nonatomic) NSInteger id;
 @property (nonatomic) NSString *title;
 @property (nonatomic) NSString *description;
 @property (nonatomic) NSString *imageURL;

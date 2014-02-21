@@ -13,7 +13,6 @@
 		4800F22A1818796D00784F09 /* credit_card-50@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4800F2291818796D00784F09 /* credit_card-50@2x.png */; };
 		4800F22C18187AA200784F09 /* group-50@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4800F22B18187AA200784F09 /* group-50@2x.png */; };
 		4800F22E1819287D00784F09 /* temp_party.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 4800F22D1819287D00784F09 /* temp_party.jpg */; };
-		4800F2341819CE6600784F09 /* DBExpenseMembersVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 4800F2331819CE6600784F09 /* DBExpenseMembersVC.m */; };
 		4800F2371819D05600784F09 /* DBExpenseDetailsVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 4800F2361819D05600784F09 /* DBExpenseDetailsVC.m */; };
 		481CBE2E1816FD3700762821 /* test.json in Resources */ = {isa = PBXBuildFile; fileRef = 481CBE2D1816FD3700762821 /* test.json */; };
 		481CBE311817066500762821 /* DBDocumentsManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 481CBE301817066500762821 /* DBDocumentsManager.m */; };
@@ -24,6 +23,7 @@
 		4858CF7F1817CB0E00862B33 /* ShariExpense.json in Resources */ = {isa = PBXBuildFile; fileRef = 4858CF7E1817CB0E00862B33 /* ShariExpense.json */; };
 		4858CF811817CB7200862B33 /* ShariSocial.json in Resources */ = {isa = PBXBuildFile; fileRef = 4858CF801817CB7200862B33 /* ShariSocial.json */; };
 		485F072A1891C028003F37B0 /* DBAddMembersVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 485F07291891C028003F37B0 /* DBAddMembersVC.m */; };
+		4878380518B78BA200EC6E26 /* DBAddPayersVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 4878380418B78BA200EC6E26 /* DBAddPayersVC.m */; };
 		489E3CEE187F71A30067AF39 /* DBAddExpenseVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 489E3CED187F71A30067AF39 /* DBAddExpenseVC.m */; };
 		48A0CF9217A83C1900B819E5 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 48A0CF9117A83C1900B819E5 /* UIKit.framework */; };
 		48A0CF9417A83C1900B819E5 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 48A0CF9317A83C1900B819E5 /* Foundation.framework */; };
@@ -90,8 +90,6 @@
 		4800F2291818796D00784F09 /* credit_card-50@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "credit_card-50@2x.png"; sourceTree = "<group>"; };
 		4800F22B18187AA200784F09 /* group-50@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "group-50@2x.png"; sourceTree = "<group>"; };
 		4800F22D1819287D00784F09 /* temp_party.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = temp_party.jpg; sourceTree = "<group>"; };
-		4800F2321819CE6600784F09 /* DBExpenseMembersVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DBExpenseMembersVC.h; sourceTree = "<group>"; };
-		4800F2331819CE6600784F09 /* DBExpenseMembersVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DBExpenseMembersVC.m; sourceTree = "<group>"; };
 		4800F2351819D05600784F09 /* DBExpenseDetailsVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DBExpenseDetailsVC.h; sourceTree = "<group>"; };
 		4800F2361819D05600784F09 /* DBExpenseDetailsVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DBExpenseDetailsVC.m; sourceTree = "<group>"; };
 		481CBE2D1816FD3700762821 /* test.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = test.json; sourceTree = "<group>"; };
@@ -109,6 +107,9 @@
 		4858CF801817CB7200862B33 /* ShariSocial.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = ShariSocial.json; sourceTree = "<group>"; };
 		485F07281891C028003F37B0 /* DBAddMembersVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DBAddMembersVC.h; sourceTree = "<group>"; };
 		485F07291891C028003F37B0 /* DBAddMembersVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DBAddMembersVC.m; sourceTree = "<group>"; };
+		4878380318B78BA200EC6E26 /* DBAddPayersVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DBAddPayersVC.h; sourceTree = "<group>"; };
+		4878380418B78BA200EC6E26 /* DBAddPayersVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DBAddPayersVC.m; sourceTree = "<group>"; };
+		4878380618B78BFD00EC6E26 /* ShariHeaders.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ShariHeaders.h; sourceTree = "<group>"; };
 		489E3CEC187F71A30067AF39 /* DBAddExpenseVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DBAddExpenseVC.h; sourceTree = "<group>"; };
 		489E3CED187F71A30067AF39 /* DBAddExpenseVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DBAddExpenseVC.m; sourceTree = "<group>"; };
 		48A0CF8E17A83C1900B819E5 /* Sharinator-iPhone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Sharinator-iPhone.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -233,10 +234,10 @@
 			children = (
 				4800F2351819D05600784F09 /* DBExpenseDetailsVC.h */,
 				4800F2361819D05600784F09 /* DBExpenseDetailsVC.m */,
-				4800F2321819CE6600784F09 /* DBExpenseMembersVC.h */,
-				4800F2331819CE6600784F09 /* DBExpenseMembersVC.m */,
 				489E3CEC187F71A30067AF39 /* DBAddExpenseVC.h */,
 				489E3CED187F71A30067AF39 /* DBAddExpenseVC.m */,
+				4878380318B78BA200EC6E26 /* DBAddPayersVC.h */,
+				4878380418B78BA200EC6E26 /* DBAddPayersVC.m */,
 			);
 			name = Expenses;
 			sourceTree = "<group>";
@@ -425,6 +426,7 @@
 				48A0D07217A99FFF00B819E5 /* Value Objects */,
 				48A0D08617A9AAE100B819E5 /* ShariClient.h */,
 				48A0D08717A9AAE100B819E5 /* ShariClient.m */,
+				4878380618B78BFD00EC6E26 /* ShariHeaders.h */,
 			);
 			name = API;
 			sourceTree = "<group>";
@@ -593,10 +595,10 @@
 				48A0D07B17A9A94800B819E5 /* ShariSocialProfile.m in Sources */,
 				48A0D08817A9AAE200B819E5 /* ShariClient.m in Sources */,
 				4800F2371819D05600784F09 /* DBExpenseDetailsVC.m in Sources */,
+				4878380518B78BA200EC6E26 /* DBAddPayersVC.m in Sources */,
 				48A0D08C17AA482000B819E5 /* VKAccessManager.m in Sources */,
 				48A0D08F17AA517700B819E5 /* VKAccessToken.m in Sources */,
 				4833165617B040E000F43569 /* DBEventsVC.m in Sources */,
-				4800F2341819CE6600784F09 /* DBExpenseMembersVC.m in Sources */,
 				48DF5BE317B1A36200D11E0C /* ShariEvent.m in Sources */,
 				4842630017B2ED4F00CFDA0F /* DBAddEventVC.m in Sources */,
 				48CBDC1118146EAD00241BF8 /* DBEventVC.m in Sources */,

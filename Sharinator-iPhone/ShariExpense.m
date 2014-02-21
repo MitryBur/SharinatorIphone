@@ -15,14 +15,28 @@
         self.description = dictionary[@"description"];
         self.currency = dictionary[@"currency"];
         self.price = [NSNumber numberWithFloat:[dictionary[@"price"] floatValue]];
-        self.payer = [ShariSocialProfile processJSONString:dictionary[@"payer"]];
-        self.members = dictionary[@"members"];
     }
     return self;
 }
 
+- (NSString *) processUsers{
+    NSMutableArray *userDicArray = [[NSMutableArray alloc] init];
+    for (ShariUser *u in self.users) {
+        [userDicArray addObject:[u dictionaryRepresentation]];
+    }
+    return [userDicArray copy];
+}
+
 - (NSDictionary *)dictionaryRepresentation{
-    return @{@"title": self.title,@"description": self.description, @"currency":self.currency, @"price": self.price, @"payer":self.payer, @"members":self.members};
+    NSMutableArray *keys = [[NSMutableArray alloc] initWithObjects:@"title", @"description", @"event_id", @"price", nil];
+    NSMutableArray *objects = [[NSMutableArray alloc] initWithObjects:self.title, self.description, @(self.event.id), self.price,  nil];
+    if (self.users) {
+        [keys addObject:@"users"];
+        [objects addObject:[self processUsers]];
+    }
+    NSDictionary *parameters = [[NSDictionary alloc] initWithObjects:objects forKeys:keys];
+    return [[NSDictionary alloc] initWithObjectsAndKeys:parameters, @"expense", nil];
+    
 }
 
 + (NSString *)requestPath{

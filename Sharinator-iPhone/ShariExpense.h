@@ -8,14 +8,18 @@
 
 #import <Foundation/Foundation.h>
 #import "ShariObject.h"
-#import "ShariSocialProfile.h"
+#import "ShariUser.h"
+#import "ShariEvent.h"
 
 @interface ShariExpense : ShariObject
 @property (nonatomic) NSString *title;
 @property (nonatomic) NSString *description;
 @property (nonatomic) NSString *currency;
+@property (nonatomic) NSString *imageURL;
 @property (nonatomic) NSNumber *price;
-@property (nonatomic) ShariSocialProfile *payer;
-@property (nonatomic) NSArray *members;
+@property (nonatomic) ShariUser *payer;
+@property (nonatomic) NSArray *users;
+@property (nonatomic) ShariEvent *event;
+@property (nonatomic) NSDate *dueDate;
 
 @end

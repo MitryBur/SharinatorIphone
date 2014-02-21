@@ -9,14 +9,16 @@
 @import UIKit;
 #import "DBAddMembersVC.h"
 #import "DBSelectEventVC.h"
+#import "ShariHeaders.h"
 
-@interface DBAddExpenseVC : UITableViewController<DBAddMembersVCDelegate, DBSelectEventVCDelegate>
+@interface DBAddExpenseVC : UITableViewController<DBSelectEventVCDelegate>
 
 @property (weak, nonatomic) IBOutlet UITextField *titleTextField;
 @property (weak, nonatomic) IBOutlet UITextView *descriptionTextView;
 @property (weak, nonatomic) IBOutlet UITextField *priceTextField;
 
-- (IBAction)save:(id)sender;
+@property (strong, nonatomic) ShariEvent *event;
+@property (nonatomic, strong) ShariExpense *expense;
 
 - (IBAction)textFieldReturn:(id)sender;
 
