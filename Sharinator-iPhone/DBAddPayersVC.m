@@ -98,6 +98,8 @@
 }
 
 - (void)shariClient:(ShariClient *)client didPostWithResponse:(id)response{
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Expense added" message:@"Expense was successfully added to your event" delegate:nil cancelButtonTitle:@"Okay" otherButtonTitles:nil];
+    [alert show];
 }
 
 - (void)shariClient:(ShariClient *)client didFailWithError:(NSError *)error{
