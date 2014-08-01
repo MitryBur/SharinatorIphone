@@ -7,7 +7,7 @@
 //
 
 #import "DBAppDelegate.h"
-#import "AFNetworking.h"
+#import "AFNetworkActivityIndicatorManager.h"
 @implementation DBAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions

@@ -20,7 +20,7 @@
 @property (nonatomic, strong) UIViewController *viewController;
 
 + (VKAccessManager *) sharedInstance;
-- (void) refreshToken:(UIViewController *)parentVC;
+- (void) refreshTokenFromController:(UIViewController *)parentVC;
 
 @end
 

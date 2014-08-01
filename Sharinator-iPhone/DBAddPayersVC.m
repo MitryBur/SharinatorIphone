@@ -8,7 +8,7 @@
 
 #import "DBAddPayersVC.h"
 #import "ShariSocialProfile.h"
-
+#import "ShariAPI.h"
 @interface DBAddPayersVC ()
 
 @end
@@ -55,10 +55,11 @@
     static NSString *CellIdentifier = @"Cell";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
     ShariUser *user = self.event.members[indexPath.row];
+    cell.textLabel.text = [NSString stringWithFormat:@"%@ %@", user.social.name, user.social.surname];
+    cell.accessoryType = UITableViewCellAccessoryNone;
     if ([selectedPayers containsObject:user]){
         cell.accessoryType = UITableViewCellAccessoryCheckmark;
     }
-    cell.textLabel.text = user.social.name;
     return cell;
 }
 
@@ -84,25 +85,18 @@
     }
 }
 
-- (IBAction)save:(id)sender {
+- (IBAction)save:(id)sender
+{
     NSLog(@"Saved");
-    ShariClient *client = [ShariClient sharedInstance];
-    client.delegate = self;
-    self.expense.users = [selectedPayers copy];
-    [client post:[ShariExpense class] data:[self.expense dictionaryRepresentation]];
+
+    self.expense.debtors = [selectedPayers copy];
+    [ShariAPI addExpense:self.expense withSuccess:^(id response){
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Expense added" message:@"Expense was successfully added to your event" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+        [alert show];
+    }
+               failure:^(NSError *error){
+                   NSLog(@"%@", error);
+               }];
 }
 
-#pragma mark - ShariClient delegate
-- (void)shariClient:(ShariClient *)client didGetWithResponse:(id)response{
-
-}
-
-- (void)shariClient:(ShariClient *)client didPostWithResponse:(id)response{
-    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Expense added" message:@"Expense was successfully added to your event" delegate:nil cancelButtonTitle:@"Okay" otherButtonTitles:nil];
-    [alert show];
-}
-
-- (void)shariClient:(ShariClient *)client didFailWithError:(NSError *)error{
-    NSLog(@"Error: %@", error);
-}
 @end

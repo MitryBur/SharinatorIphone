@@ -6,5 +6,7 @@
 //  Copyright (c) 2014 Dmitry Burmistrov. All rights reserved.
 //
 
-#include "ShariEvent.h"
-#include "ShariExpense.h"
+#import "ShariEvent.h"
+#import "ShariExpense.h"
+#import "ShariUser.h"
+#import "ShariSocialProfile.h"

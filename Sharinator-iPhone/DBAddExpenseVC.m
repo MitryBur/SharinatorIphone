@@ -32,6 +32,9 @@
     UITapGestureRecognizer *gestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(hideKeyboard)];
     gestureRecognizer.cancelsTouchesInView = NO;
     [self.tableView addGestureRecognizer:gestureRecognizer];
+    
+    UITableViewCell *cell = [self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0]];
+    cell.detailTextLabel.text = @"None";
 }
 
 - (void)didReceiveMemoryWarning
@@ -86,6 +89,8 @@
 - (void)eventSelected:(ShariEvent *)event{
     NSLog(@"Event title is %@", event.title);
     self.event = event;
+    UITableViewCell *cell = [self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0]];
+    cell.detailTextLabel.text = self.event.title;
 }
 
 @end

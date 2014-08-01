@@ -8,6 +8,7 @@
 
 #import "DBSelectEventVC.h"
 #import "ShariSocialProfile.h"
+#import "ShariAPI.h"
 
 
 @implementation DBSelectEventVC{
@@ -34,9 +35,6 @@
     [refreshControl addTarget:self action:@selector(reloadDataFromWeb) forControlEvents:UIControlEventValueChanged];
     self.refreshControl = refreshControl;
     
-    ShariClient *client = [ShariClient sharedInstance];
-    client.delegate = self;
-    
     [self reloadDataFromWeb];
 }
 - (void)viewWillAppear:(BOOL)animated{
@@ -50,7 +48,22 @@
 }
 
 -(void)reloadDataFromWeb{
-    [[ShariClient sharedInstance] get:[ShariEvent class]];
+    [ShariAPI userEventsWithSuccess:^(id response){
+        NSLog(@"%s", __FUNCTION__);
+        NSLog(@"%@", [response description]);
+        //Any response objects are packed into array
+        if ([response isKindOfClass:[NSArray class]])
+        {
+            events = response;
+            [self.refreshControl endRefreshing];
+            [self.tableView reloadData];
+        }
+    }
+     
+        failure:^(NSError *error){
+            [self.refreshControl endRefreshing];
+            NSLog(@"%@", error);
+        }];
 }
 
 - (void)didReceiveMemoryWarning
@@ -103,14 +116,4 @@
     }
 }
 
-#pragma mark - ShariClient delegate
-- (void)shariClient:(ShariClient *)client didGetWithResponse:(id)response{
-    events = response;
-    [self.tableView reloadData];
-    [self.refreshControl endRefreshing];
-}
-
-- (void)shariClient:(ShariClient *)client didFailWithError:(NSError *)error{
-    NSLog(@"Error: %@", error);
-}
 @end

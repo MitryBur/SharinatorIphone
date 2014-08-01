@@ -8,10 +8,8 @@
 
 @import UIKit;
 #import "ShariHeaders.h"
-#import "ShariClient.h"
 
-
-@interface DBAddPayersVC : UITableViewController<ShariClientDelegate>
+@interface DBAddPayersVC : UITableViewController
 @property (nonatomic, strong) ShariEvent *event;
 @property (nonatomic, strong) ShariExpense *expense;
 

@@ -8,12 +8,11 @@
 
 @import UIKit;
 
-#import "ShariClient.h"
 #import "ShariEvent.h"
 
 @protocol DBSelectEventVCDelegate;
 
-@interface DBSelectEventVC : UITableViewController <ShariClientDelegate>
+@interface DBSelectEventVC : UITableViewController
 @property (nonatomic, weak) id<DBSelectEventVCDelegate> delegate;
 @end
 

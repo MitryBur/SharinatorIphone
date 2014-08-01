@@ -10,6 +10,8 @@
 #import "ShariSocialProfile.h"
 #import "ShariUser.h"
 
+#import "ShariAPI.h"
+
 @implementation DBAddMembersVC{
     NSMutableArray *members;
     NSArray *vkFriends;
@@ -40,8 +42,6 @@
     recognizer.direction = UISwipeGestureRecognizerDirectionLeft;
     [self.tableView addGestureRecognizer:recognizer];
     
-    ShariClient *client = [ShariClient sharedInstance];
-    client.delegate = self;
     
     members = [[NSMutableArray alloc] init];
     
@@ -73,7 +73,16 @@
 }
 
 -(void)reloadDataFromWeb{
-    [[ShariClient sharedInstance] getVKFriends];
+    [ShariAPI userVKFriendsWithSuccess:^(id response){
+        vkFriends = response;
+        [self.tableView reloadData];
+        [self.refreshControl endRefreshing];
+    }
+     
+        failure:^(NSError *error){
+            [self.refreshControl endRefreshing];
+            NSLog(@"%@", error);
+        }];
 }
 
 - (void)didReceiveMemoryWarning
@@ -100,9 +109,11 @@
 {
     static NSString *CellIdentifier = @"Cell";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
+
 	ShariUser *friend = vkFriends[indexPath.row];
-    cell.textLabel.text = friend.social.name;
-    
+    cell.textLabel.text = [NSString stringWithFormat:@"%@ %@", friend.social.name, friend.social.surname];
+    cell.accessoryType = UITableViewCellAccessoryNone;
+  
     for (ShariUser *u in members) {
         if (u.social.vkID == friend.social.vkID) {
             cell.accessoryType = UITableViewCellAccessoryCheckmark;
@@ -119,7 +130,7 @@
 {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
-    cell.accessoryType = cell.accessoryType == UITableViewCellAccessoryCheckmark ? UITableViewCellAccessoryNone : UITableViewCellAccessoryCheckmark;
+    cell.accessoryType = (cell.accessoryType == UITableViewCellAccessoryCheckmark) ? UITableViewCellAccessoryNone : UITableViewCellAccessoryCheckmark;
     
     ShariUser *friend = vkFriends[indexPath.row];
     if (cell.accessoryType == UITableViewCellAccessoryCheckmark) {
@@ -129,16 +140,5 @@
     else{
         [members removeObjectIdenticalTo:friend];
     }
-}
-
-#pragma mark - ShariClient delegate
-- (void)shariClient:(ShariClient *)client didGetWithResponse:(id)response{
-        vkFriends = response;
-        [self.tableView reloadData];
-        [self.refreshControl endRefreshing];
-}
-
-- (void)shariClient:(ShariClient *)client didFailWithError:(NSError *)error{
-    NSLog(@"Error: %@", error);
 }
 @end

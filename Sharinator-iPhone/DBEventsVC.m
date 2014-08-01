@@ -7,9 +7,11 @@
 //
 
 #import "DBEventsVC.h"
-#import "ShariEvent.h"
-#import "VKAccessManager.h"
 #import "DBEventVC.h"
+
+#import "ShariHeaders.h"
+
+#import "ShariAPI.h"
 
 @interface DBEventsVC ()
 
@@ -18,6 +20,7 @@
 @implementation DBEventsVC
 {
     BOOL flag;
+    BOOL isAuthenticated;
     NSMutableArray *methodsQueue;
 }
 
@@ -30,19 +33,17 @@
     return self;
 }
 
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
 
-    UIRefreshControl *refreshControl = [[UIRefreshControl alloc]
-                                        init];
+    UIRefreshControl *refreshControl = [[UIRefreshControl alloc] init];
     refreshControl.tintColor = [UIColor magentaColor];
     [refreshControl addTarget:self action:@selector(reloadDataFromWeb) forControlEvents:UIControlEventValueChanged];
     self.refreshControl = refreshControl;
     
-    ShariClient *client = [ShariClient sharedInstance];
-    client.delegate = self;
-    
+    isAuthenticated = NO;
     methodsQueue = [[NSMutableArray alloc] init];
     VKAccessManager *vkManager = [VKAccessManager sharedInstance];
     vkManager.delegate = self;
@@ -50,25 +51,23 @@
         NSMethodSignature *signature  = [self methodSignatureForSelector:_cmd];
         NSInvocation      *invocation = [NSInvocation invocationWithMethodSignature:signature];
         
-        [invocation setTarget:client];
-        [invocation setSelector:@selector(authenticate)];
+        [invocation setTarget:self];
+        [invocation setSelector:@selector(authenticateUsingShariAPI)];
         
         [methodsQueue addObject:invocation];
-        [vkManager refreshToken:self];
+        [vkManager refreshTokenFromController:self];
     }
     else{
-        [client authenticate];
+        [self authenticateUsingShariAPI];
     }
 }
 
 -(void)viewWillAppear:(BOOL)animated{
-    [self reloadDataFromWeb];
+    if (isAuthenticated) {
+        [self reloadDataFromWeb];
+    }
 }
--(void)reloadDataFromWeb{
-    ShariClient *client = [ShariClient sharedInstance];
-    client.delegate = self;
-    [client get:[ShariEvent class]];
-}
+
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
@@ -93,6 +92,43 @@
         return;
     }
 }
+
+
+-(void)reloadDataFromWeb{
+    [ShariAPI userEventsWithSuccess:^(id response){
+            NSLog(@"%s", __FUNCTION__);
+            NSLog(@"%@", [response description]);
+            //Any response objects are packed into array
+            if ([response isKindOfClass:[NSArray class]])
+            {
+                self.events = response;
+                NSLog(@"Response: %lu", (unsigned long)[self.events count]);
+                [self.refreshControl endRefreshing];
+                [self.tableView reloadData];
+            }
+        }
+     
+        failure:^(NSError *error){
+            [self.refreshControl endRefreshing];
+            NSLog(@"%@", error);
+    }];
+}
+
+- (void)authenticateUsingShariAPI
+{
+    [ShariAPI authenticateWithSuccess:^(id response){
+        isAuthenticated = YES;
+        [self reloadDataFromWeb];
+    }
+     
+      failure:^(NSError *error){
+          isAuthenticated = NO;
+          UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Error" message:@"Authentication failed." delegate:nil cancelButtonTitle:@"Dismiss" otherButtonTitles: nil];
+          [alert show];
+          NSLog(@"Authentication failed");
+      }];
+}
+
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
@@ -131,42 +167,18 @@
      [self.navigationController pushViewController:detailViewController animated:YES];
      */
 }
-#pragma mark - ShariClient delegate
-- (void)shariClient:(ShariClient *)client didGetWithResponse:(id)response{
-
-    NSLog(@"%s", __FUNCTION__);
-    NSLog(@"%@", [response description]);
-    
-    //Any response objects are packed into array
-    if ([response isKindOfClass:[NSArray class]])
-    {
-        self.events = response;
-        NSLog(@"Response: %d", [self.events count]);
-        [self.tableView reloadData];
-        [self.refreshControl endRefreshing];
-        return;
-    
-    }
-    //Except for authentication. In case of authentication request:
-    [self reloadDataFromWeb];
-}
-
-- (void)shariClient:(ShariClient *)client didPostWithResponse:(id)response{
-    flag = NO;
-    [client get:[ShariEvent class]];
-}
-
-- (void)shariClient:(ShariClient *)client didFailWithError:(NSError *)error{
-    NSLog(@"Error: %@", error);
-    [self.refreshControl endRefreshing];
-
-}
 
 #pragma mark - DBAddEventVC delegate
 - (void)addEventVCDidSave:(DBAddEventVC *)controller event:(ShariEvent *)event{
     NSLog(@"%s", __FUNCTION__);
     NSLog(@"%@, %@", event.title, event.description);
-    [[ShariClient sharedInstance] post:[ShariEvent class] data:[event dictionaryRepresentation]];
+
+    [ShariAPI addEvent:event withSuccess:^(id response){
+        [self reloadDataFromWeb];
+    }
+        failure:^(NSError *error){
+            NSLog(@"%@", error);
+        }];
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 - (void)addEventVCDidCancel:(DBAddEventVC *)controller{
@@ -178,18 +190,18 @@
 - (void)vkAccessManager:(VKAccessManager *)manager tokenRefreshed:(VKAccessToken *)token{
     NSLog(@"%s", __FUNCTION__);
     if ([VKAccessToken loadToken]) {
-        NSLog(@"Token: %@ %d", [VKAccessToken loadToken].token, [VKAccessToken loadToken].vkID);
+        NSLog(@"Token: %@ %lu", [VKAccessToken loadToken].token, (unsigned long)[VKAccessToken loadToken].vkID);
     }else{
         NSLog(@"[Warning]. Token was not loaded.");
     };
-    
+#warning is it really necessary?
     for (NSInvocation *i in methodsQueue){
         [i invoke];
         [methodsQueue removeObject:i];
     }
 }
 - (void)vkAccessManager:(VKAccessManager *)manager didFailWithError:(NSError *)error{
-    NSLog(@"Error: %@", error);
+    NSLog(@"VK access manager error: %@", error);
 }
 
 @end

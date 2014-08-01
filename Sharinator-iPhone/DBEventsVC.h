@@ -8,10 +8,9 @@
 
 @import UIKit;
 
-#import "ShariClient.h"
 #import "DBAddEventVC.h"
 #import "VKAccessManager.h"
 
-@interface DBEventsVC : UITableViewController <ShariClientDelegate, DBAddEventVCDelegate, VKAccessManagerDelegate>
+@interface DBEventsVC : UITableViewController <DBAddEventVCDelegate, VKAccessManagerDelegate>
 @property (nonatomic) NSMutableArray *events;
 @end

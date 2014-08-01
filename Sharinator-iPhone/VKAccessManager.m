@@ -66,26 +66,23 @@
                         "redirect_uri=http://api.vkontakte.ru/blank.html&"
                         "response_type=token"];
     
-    AFHTTPClient *httpClient = [[AFHTTPClient alloc] initWithBaseURL:[NSURL URLWithString:@"http://oauth.vk.com/"]];
-    NSMutableURLRequest *request = [httpClient requestWithMethod:@"GET"
-                                                            path:[vkAuthUrl absoluteString]
-                                                      parameters:nil];
-    AFHTTPRequestOperation *operation = [[AFHTTPRequestOperation alloc] initWithRequest:request];
-    [httpClient registerHTTPOperationClass:[AFHTTPRequestOperation class]];
-    [operation setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
+    AFHTTPSessionManager *httpClient = [[AFHTTPSessionManager alloc] initWithBaseURL:[NSURL URLWithString:@"http://oauth.vk.com/"]];
+    httpClient.requestSerializer = [AFHTTPRequestSerializer serializer];
+    httpClient.responseSerializer = [AFHTTPResponseSerializer serializer];
+    [httpClient GET:[vkAuthUrl absoluteString] parameters:nil success:
+     ^(NSURLSessionDataTask *task, id responseObject) {
         // Print the response body in text
-        NSString *urlString = [[[operation response] URL] absoluteString];
+        NSString *urlString = [[[task response] URL] absoluteString];
         NSLog(@"URL %@",urlString);
         if ([self parseTokenURL:urlString]){
             [self.delegate vkAccessManager:self tokenRefreshed:[VKAccessToken loadToken]];
         }
         else
             [self retrieveTokenUsingWebView:_parentVC];
-    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+    } failure:^(NSURLSessionDataTask *task, NSError *error) {
         NSLog(@"Error: %@", error);
         [self retrieveTokenUsingWebView:_parentVC];
     }];
-    [operation start];
     
     return nil;
     
@@ -129,7 +126,7 @@
     //Otherwise
     return nil;
 }
-- (void) refreshToken:(UIViewController *)parentVC{
+- (void) refreshTokenFromController:(UIViewController *)parentVC{
     _parentVC = parentVC;
     [self retrieveTokenSilently];
 }

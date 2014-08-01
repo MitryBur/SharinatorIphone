@@ -8,11 +8,9 @@
 
 @import UIKit;
 
-#import "ShariClient.h"
-
 @protocol DBAddMembersVCDelegate;
 
-@interface DBAddMembersVC : UITableViewController <ShariClientDelegate>
+@interface DBAddMembersVC : UITableViewController
 @property (nonatomic, weak) id<DBAddMembersVCDelegate> delegate;
 @end
 

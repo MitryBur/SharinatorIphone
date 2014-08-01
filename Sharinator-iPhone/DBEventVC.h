@@ -9,9 +9,8 @@
 @import UIKit;
 
 #import "ShariEvent.h"
-#import "ShariClient.h"
 
-@interface DBEventVC : UITableViewController <ShariClientDelegate>
+@interface DBEventVC : UITableViewController
 @property (weak, nonatomic) IBOutlet UISegmentedControl *visibleDataSegmentedControl;
 @property (strong, nonatomic) ShariEvent *event;
 

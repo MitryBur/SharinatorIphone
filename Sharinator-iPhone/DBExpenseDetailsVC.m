@@ -8,6 +8,7 @@
 
 #import "DBExpenseDetailsVC.h"
 #import "ShariSocialProfile.h"
+#import "DBExpenseDebtorsVC.h"
 
 @interface DBExpenseDetailsVC ()
 
@@ -38,6 +39,13 @@
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+    if ([segue.identifier isEqualToString:@"PayersList"]) {
+        DBExpenseDebtorsVC *controller = segue.destinationViewController;
+        controller.debtors = self.expense.debtors;
+    }
+
 }
 
 @end
